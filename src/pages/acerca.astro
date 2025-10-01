@@ -1,17 +1,11 @@
 ---
 import '../styles/global.css';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="es">
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Acerca de Nosotros - CMAP Sección 54</title>
-</head>
-<body class="bg-gray-50">
-    <div class="container mx-auto px-4 py-12 max-w-6xl">
-        
+<BaseLayout title="Acerca de Nosotros">
+	<div class="container mx-auto px-4 py-12 max-w-6xl">
+
         <!-- Header -->
         <header class="text-center mb-16">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -212,5 +206,4 @@ import '../styles/global.css';
             </p>
         </footer>
     </div>
-</body>
-</html>
+</BaseLayout>
