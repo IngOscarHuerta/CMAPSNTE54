@@ -1,15 +1,25 @@
 ---
-import '../styles/global.css';
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Aquí puedes agregar la lógica para leer los archivos de assets
 // Por ahora usaremos datos de ejemplo
+const formatos = [
+    { order: 1, name: 'Solicitud de Préstamo', file: '/public/formatos/Solicitud de Prestamo.pdf' },
+    { order: 1, name: 'Solicitud de Devolución', file: '/public/formatos/Solicitud de Devolucion.pdf' },
+    { order: 3, name: 'Solicitud de Gastos Médicos', file: '/public/formatos/Solicitud de Gastos Medicos.pdf' },
+    { order: 4, name: 'Solicitud de Gastos Funerarios', file: '/public/formatos/Solicitud de Gastos Funerarios.pdf' },
+    { order: 5, name: 'Poliza de Seguro Hogar', file: '/public/formatos/Poliza de Seguro Hogar.pdf' },
+    { order: 6, name: 'Solicitud de Préstamo de Póliza de Seguro', file: '/public/formatos/Solicitud Prestamo de Poliza de Seguro.pdf' },
+    { order: 7, name: 'Solicitud de Préstamos de Desastres Naturales', file: '/public/formatos/Solicitud de Prestamos de Desastres Naturales.pdf' },
+    { order: 8, name: 'Solicitud de Bono para el Retiro', file: '/public/formatos/Solicitud de Bono para el Retiro.pdf' },
+];
+
 const comunicados = [
-    { order: 1, name: 'XIV Asamblea Ordinaria', file: '/public/documentos/1CAviso-Enero-2025.pdf' },
-    { order: 2, name: 'Comunicado Oficial Diciembre', file: '/public/documentos/2CComunicado-Diciembre.pdf' },
-    { order: 3, name: 'Actualización de Políticas', file: '/public/documentos/3CActualizacion-Politicas.pdf' },
-    { order: 4, name: 'Información General', file: '/public/documentos/4CInformacion-General.pdf' },
-    { order: 5, name: 'Nuevo Reglamento', file: '/public/documentos/5CNuevo-Reglamento.pdf' },
+    { order: 1, name: 'XXIII Asamblea Ordinaria de Representantes de Socios', file: '/public/comunicados/Comunicado 1.jpg' },
+    { order: 2, name: 'Comunicado Apoyos Vigentes', file: '/public/comunicados/Comunicado 2.jpg' },
+    { order: 3, name: 'Aviso Remanente', file: '/public/comunicados/Aviso 1.jpg' },
+    { order: 4, name: 'Atención', file: '/public/comunicados/Comunicado 3.jpg' },
+    { order: 5, name: 'Comunicado', file: '/public/comunicados/Comunicado 4.jpg' },
 ];
 
 const asambleas = [
@@ -46,9 +56,66 @@ const asambleas = [
                 Documentos
             </h1>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                Consulta nuestros comunicados oficiales y actas de asambleas
+                Consulta nuestros formatos, comunicados oficiales y actas de asambleas
             </p>
         </header>
+
+        
+        <!-- Formatos -->
+        <section class="mb-20">
+            <div class="flex items-center mb-8 space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <span class="text-2xl">📋</span>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Formatos</h2>
+                    <p class="text-gray-600">Solicitudes de formatos oficiales</p>
+                </div>
+            </div>
+            
+            <div class="relative overflow-hidden py-8">
+                <div class="slider-asambleas flex gap-6 animate-scroll-right">
+                    {formatos.concat(formatos).map((doc) => (
+                        <a href={doc.file} target="_blank" rel="noopener noreferrer" 
+                           class="doc-card flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-gray-200 hover:border-purple-400">
+                            <div class="h-full flex flex-col">
+                                <!-- Portada simulada del documento -->
+                                <div class="flex-1 bg-gradient-to-br from-purple-100 via-white to-pink-50 p-8 relative overflow-hidden">
+                                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-600 opacity-10 rounded-full -mr-16 -mt-16"></div>
+                                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-pink-600 opacity-10 rounded-full -ml-12 -mb-12"></div>
+                                    
+                                    <div class="relative z-10 h-full flex flex-col">
+                                        <div class="flex-1 flex items-center justify-center">
+                                            <div class="text-center">
+                                                <div class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                                                    <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                    </svg>
+                                                </div>
+                                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                                                    {doc.name}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Footer de la card -->
+                                <div class="bg-gradient-to-r from-purple-600 to-pink-600 p-4 text-white text-center group-hover:from-purple-700 group-hover:to-pink-700 transition-all">
+                                    <p class="font-semibold text-sm flex items-center justify-center space-x-2">
+                                        <span>Ver Formato</span>
+                                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
 
         <!-- Comunicados y Avisos -->
         <section class="mb-20">

@@ -6,6 +6,9 @@ dist/
 # dependencies
 node_modules/
 public/documentos
+public/comunicados
+public/formatos
+public/avisos
 
 # logs
 npm-debug.log*
