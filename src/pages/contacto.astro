@@ -4,794 +4,789 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="Contacto">
     <div class="container mx-auto px-4 py-12 max-w-7xl">
-            <!-- Header -->
-            <header class="text-center mb-12">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    ¿En qué podemos ayudarte?
-                </h1>
-                <p class="text-xl text-gray-600">
-                    Estamos a tus órdenes en las siguientes oficinas
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                ¿En qué podemos ayudarte?
+            </h1>
+            <p class="text-xl text-gray-600">
+                Estamos a tus órdenes en las siguientes oficinas
+            </p>
+        </header>
+
+        <!-- Oficina Principal -->
+        <section
+            class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl shadow-lg p-8 mb-12 text-white"
+        >
+            <div class="flex items-center mb-6">
+                <div
+                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-4"
+                >
+                    <span class="text-4xl">🏢</span>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold">Oficina Principal</h2>
+                    <p class="text-blue-100">Hermosillo, Sonora</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-3">📍</span>
+                        <div>
+                            <h3 class="font-bold mb-1">Dirección</h3>
+                            <p class="text-blue-100">
+                                Obregón 62 Col. Centro<br />Hermosillo Sonora,
+                                México<br />C.P. 83000
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-3">📞</span>
+                        <div>
+                            <h3 class="font-bold mb-1">Teléfono</h3>
+                            <p class="text-blue-100">(662) 259 9900</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-3">📧</span>
+                        <div>
+                            <h3 class="font-bold mb-1">Correo Electrónico</h3>
+                            <p class="text-blue-100">
+                                contacto@cmapsnte54.com.mx
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-3">🕒</span>
+                        <div>
+                            <h3 class="font-bold mb-1">Horario</h3>
+                            <p class="text-blue-100">
+                                Lunes a Viernes: 8am - 4pm
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sucursales -->
+        <section>
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">
+                    Nuestras Sucursales
+                </h2>
+                <p class="text-gray-600">
+                    Presencia en todo el estado de Sonora
                 </p>
-            </header>
+            </div>
 
-            <!-- Oficina Principal -->
-            <section
-                class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl shadow-lg p-8 mb-12 text-white"
-            >
-                <div class="flex items-center mb-6">
-                    <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-4"
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Agua Prieta -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
                     >
-                        <span class="text-4xl">🏢</span>
-                    </div>
-                    <div>
-                        <h2 class="text-3xl font-bold">Oficina Principal</h2>
-                        <p class="text-blue-100">Hermosillo, Sonora</p>
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        AGUA PRIETA
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span>Calle 7 entre 8 y 9 S/N Col. Centro</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(633) 338 48 84</span>
+                        </p>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                        <div class="flex items-start">
-                            <span class="text-2xl mr-3">📍</span>
-                            <div>
-                                <h3 class="font-bold mb-1">Dirección</h3>
-                                <p class="text-blue-100">
-                                    Obregón 62 Col. Centro<br />Hermosillo
-                                    Sonora, México<br />C.P. 83000
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                        <div class="flex items-start">
-                            <span class="text-2xl mr-3">📞</span>
-                            <div>
-                                <h3 class="font-bold mb-1">Teléfono</h3>
-                                <p class="text-blue-100">(662) 259 9900</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                        <div class="flex items-start">
-                            <span class="text-2xl mr-3">📧</span>
-                            <div>
-                                <h3 class="font-bold mb-1">
-                                    Correo Electrónico
-                                </h3>
-                                <p class="text-blue-100">
-                                    contacto@cmapsnte54.com.mx
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                        <div class="flex items-start">
-                            <span class="text-2xl mr-3">🕒</span>
-                            <div>
-                                <h3 class="font-bold mb-1">Horario</h3>
-                                <p class="text-blue-100">
-                                    Lunes a Viernes: 8am - 4pm
-                                </p>
-                            </div>
-                        </div>
+                <!-- Álamos -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        ÁLAMOS
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Carlos A. Rivero S/N Int. Centro de Maestros
+                                Col. Los Guayparines</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(647) 428 09 50</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 2pm</span>
+                        </p>
                     </div>
                 </div>
-            </section>
 
-            <!-- Sucursales -->
-            <section>
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-2">
-                        Nuestras Sucursales
-                    </h2>
-                    <p class="text-gray-600">
-                        Presencia en todo el estado de Sonora
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <!-- Agua Prieta -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                <!-- Altar -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
                     >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            AGUA PRIETA
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span>Calle 7 entre 8 y 9 S/N Col. Centro</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(633) 338 48 84</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Álamos -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            ÁLAMOS
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Carlos A. Rivero S/N Int. Centro de
-                                    Maestros Col. Los Guayparines</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(647) 428 09 50</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 2pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Altar -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            ALTAR
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Francisco I. Madero #7 entre Félix Gómez y
-                                    Morelos Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(637) 374 06 99</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 1pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Caborca -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            CABORCA
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle 11 #152 entre avenida L y M Col.
-                                    Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(637) 372 19 27</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Cananea -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            CANANEA
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Av. Juárez y 5ta oeste S/N. Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(645) 332 06 78</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Casa de Día Magisterial -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            CASA DE DÍA MAGISTERIAL
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Av. Saturnino Campoy y calle Del Maestro
-                                    S/N. Col. Magisterial</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(662) 212 36 80</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Guaymas -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            GUAYMAS
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span>Calle 20 Y Av. 10 #200 Col. Centro</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(622) 222 98 96</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Huatabampo -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            HUATABAMPO
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle Profesor Germán Ibarra Ibarra S/N
-                                    entre Ávila Camacho y Obregón Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(647) 426 33 40</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Huépac -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            HUÉPAC
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle Hidalgo #10 Int. Esc. Primaria 10 de
-                                    Mayo Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(623) 231 51 46</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 2pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Huásabas -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            HUÁSABAS
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Republica de Chile y Profesor Julián Moreno
-                                    s/n Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(634) 343 55 33</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 2pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Magdalena -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            MAGDALENA
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span>Av. Benito Juárez #311 Col. Centro</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(632) 322 80 55</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Moctezuma -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            MOCTEZUMA
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle Rito esq. Ave. Miguel Alemán S/N Col.
-                                    Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(634) 243 04 58</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 2pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Nacozari -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            NACOZARI
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle del Seguro Social S/N Esc. Jesús
-                                    García #1</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(634) 342 03 78</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 1pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Navojoa -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            NAVOJOA
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Blvd. Julio Martínez Bracamonte y Ceisd #27
-                                    Fracc. Acarandas</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(642) 421 53 51</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Nogales -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            NOGALES
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle Chimeneas #340 y Lago de Moreno Col.
-                                    Las praderas</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(631) 312 93 70</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Obregón -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            OBREGÓN
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Blvd. Casa Blanca #2701 Col. Casa Blanca</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(644) 431 20 89</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Puerto Peñasco -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            PUERTO PEÑASCO
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Av. Simón Morua y San Luis Esc. Primaria
-                                    Lázaro Cárdenas Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(638) 383 57 87</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 2pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Sahuaripa -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            SAHUARIPA
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Av. Rafael V. Meneses Esq. Morelos #20 Col.
-                                    Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(634) 343 03 58</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- San Luis Rio Colorado -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            SAN LUIS RIO COLORADO
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Av. Carranza y Calle 18 #1801 Col.
-                                    Residencias</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(653) 534 54 93</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Santa Ana -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            SANTA ANA
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle Serna y Agustín Rodríguez #201 Col.
-                                    La Granja</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(641) 324 32 47</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 3pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                     <!-- SONOYTA -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            SONOYTA
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle Reforma y Jesús García #15 Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(651) 512 02 19</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- URES -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            URES
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle Jesús García Morales #26 Entre Álvaro Obregón y Enrique Quijada Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(623) 232 02 08</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 1pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                      <!-- VILLA JUÁREZ -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            VILLA JUÁREZ
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Calle Gregorio Torres y 16 de Septiembre S/N. Int. Secundaria Estatal #28 Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(647) 482 04 28</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 2pm</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    
-                      <!-- HUÁSABAS -->
-                    <div
-                        class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
-                    >
-                        <h3
-                            class="text-lg font-bold text-blue-900 mb-3 flex items-center"
-                        >
-                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
-                            ></span>
-                            HUÁSABAS
-                        </h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p class="flex items-start">
-                                <span class="text-blue-600 mr-2">📍</span>
-                                <span
-                                    >Republica de Chile y Profesor Julián Moreno s/n Col. Centro Col. Centro</span
-                                >
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">📞</span>
-                                <span>(634) 343 55 33</span>
-                            </p>
-                            <p class="flex items-center">
-                                <span class="text-blue-600 mr-2">🕒</span>
-                                <span>L-V: 8am – 2pm</span>
-                            </p>
-                        </div>
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        ALTAR
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Francisco I. Madero #7 entre Félix Gómez y
+                                Morelos Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(637) 374 06 99</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 1pm</span>
+                        </p>
                     </div>
                 </div>
-            </section>
+
+                <!-- Caborca -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        CABORCA
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle 11 #152 entre avenida L y M Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(637) 372 19 27</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cananea -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        CANANEA
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span>Av. Juárez y 5ta oeste S/N. Col. Centro</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(645) 332 06 78</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Casa de Día Magisterial -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        CASA DE DÍA MAGISTERIAL
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Av. Saturnino Campoy y calle Del Maestro S/N.
+                                Col. Magisterial</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(662) 212 36 80</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Guaymas -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        GUAYMAS
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span>Calle 20 Y Av. 10 #200 Col. Centro</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(622) 222 98 96</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Huatabampo -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        HUATABAMPO
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle Profesor Germán Ibarra Ibarra S/N entre
+                                Ávila Camacho y Obregón Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(647) 426 33 40</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Huépac -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        HUÉPAC
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle Hidalgo #10 Int. Esc. Primaria 10 de Mayo
+                                Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(623) 231 51 46</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 2pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Huásabas -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        HUÁSABAS
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Republica de Chile y Profesor Julián Moreno s/n
+                                Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(634) 343 55 33</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 2pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Magdalena -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        MAGDALENA
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span>Av. Benito Juárez #311 Col. Centro</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(632) 322 80 55</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Moctezuma -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        MOCTEZUMA
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle Rito esq. Ave. Miguel Alemán S/N Col.
+                                Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(634) 243 04 58</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 2pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Nacozari -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        NACOZARI
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle del Seguro Social S/N Esc. Jesús García
+                                #1</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(634) 342 03 78</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 1pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Navojoa -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        NAVOJOA
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Blvd. Julio Martínez Bracamonte y Ceisd #27
+                                Fracc. Acarandas</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(642) 421 53 51</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Nogales -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        NOGALES
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle Chimeneas #340 y Lago de Moreno Col. Las
+                                praderas</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(631) 312 93 70</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Obregón -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        OBREGÓN
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span>Blvd. Casa Blanca #2701 Col. Casa Blanca</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(644) 431 20 89</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Puerto Peñasco -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        PUERTO PEÑASCO
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Av. Simón Morua y San Luis Esc. Primaria Lázaro
+                                Cárdenas Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(638) 383 57 87</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 2pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sahuaripa -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        SAHUARIPA
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Av. Rafael V. Meneses Esq. Morelos #20 Col.
+                                Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(634) 343 03 58</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- San Luis Rio Colorado -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        SAN LUIS RIO COLORADO
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Av. Carranza y Calle 18 #1801 Col. Residencias</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(653) 534 54 93</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Santa Ana -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        SANTA ANA
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle Serna y Agustín Rodríguez #201 Col. La
+                                Granja</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(641) 324 32 47</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 3pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SONOYTA -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        SONOYTA
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle Reforma y Jesús García #15 Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(651) 512 02 19</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span></span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- URES -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        URES
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle Jesús García Morales #26 Entre Álvaro
+                                Obregón y Enrique Quijada Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(623) 232 02 08</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 1pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- VILLA JUÁREZ -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        VILLA JUÁREZ
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Calle Gregorio Torres y 16 de Septiembre S/N.
+                                Int. Secundaria Estatal #28 Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(647) 482 04 28</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 2pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- HUÁSABAS -->
+                <div
+                    class="bg-white rounded-lg shadow-md p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                    <h3
+                        class="text-lg font-bold text-blue-900 mb-3 flex items-center"
+                    >
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"
+                        ></span>
+                        HUÁSABAS
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-blue-600 mr-2">📍</span>
+                            <span
+                                >Republica de Chile y Profesor Julián Moreno s/n
+                                Col. Centro Col. Centro</span
+                            >
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">📞</span>
+                            <span>(634) 343 55 33</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="text-blue-600 mr-2">🕒</span>
+                            <span>L-V: 8am – 2pm</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </BaseLayout>
