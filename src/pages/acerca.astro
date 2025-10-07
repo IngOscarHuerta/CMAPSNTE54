@@ -24,7 +24,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         >
             <div class="flex items-center mb-4">
                 <div
-                    class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4"
+                    class="w-12 h-12 bg-cmap-crema-100 rounded-lg flex items-center justify-center mr-4"
                 >
                     <span class="text-2xl">📋</span>
                 </div>
@@ -51,7 +51,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div
                 class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden"
             >
-                <div class="bg-blue-600 p-4">
+                <div class="bg-cmap-verde p-4">
                     <div class="flex items-center text-white">
                         <span class="text-3xl mr-3">🎯</span>
                         <h2 class="text-2xl font-bold">Misión</h2>
@@ -75,7 +75,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div
                 class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden"
             >
-                <div class="bg-purple-600 p-4">
+                <div class="bg-cmap-naranja-600 p-4">
                     <div class="flex items-center text-white">
                         <span class="text-3xl mr-3">🔭</span>
                         <h2 class="text-2xl font-bold">Visión</h2>
@@ -101,9 +101,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         >
             <div class="text-center mb-6">
                 <div
-                    class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-3"
+                    class="inline-flex items-center justify-center w-16 h-16 bg-cmap-verde-700 rounded-full mb-3"
                 >
-                    <span class="text-3xl">👥</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        class="fill-white size-6"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z"
+                            clip-rule="evenodd"></path>
+                        <path
+                            d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z"
+                        ></path>
+                    </svg>
                 </div>
                 <h2 class="text-2xl font-bold text-gray-900 mb-1">
                     Consejo de Administración
@@ -112,13 +124,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
 
             <!-- Funciones del Consejo -->
-            <div class="bg-blue-50 rounded-lg p-5 mb-6 border border-blue-100">
-                <h3 class="text-lg font-semibold text-blue-900 mb-3">
+            <div class="bg-white rounded-lg p-5 pt-0 mb-6">
+                <h3 class="text-lg font-semibold text-cmap-verde-900 mb-3">
                     Funciones Principales:
                 </h3>
                 <ul class="space-y-2 text-gray-700 text-sm">
                     <li class="flex items-start">
-                        <span class="text-blue-600 mr-2 mt-1">•</span>
+                        <span class="text-cmap-verde-700 mr-2 mt-1">•</span>
                         <span
                             >Establecer políticas que en materia de
                             administración y finanzas permitan la eficiencia
@@ -127,7 +139,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         >
                     </li>
                     <li class="flex items-start">
-                        <span class="text-blue-600 mr-2 mt-1">•</span>
+                        <span class="text-cmap-verde-700 mr-2 mt-1">•</span>
                         <span
                             >Establecer las normas y lineamientos para la
                             administración de los recursos humanos, financieros,
@@ -135,7 +147,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         >
                     </li>
                     <li class="flex items-start">
-                        <span class="text-blue-600 mr-2 mt-1">•</span>
+                        <span class="text-cmap-verde-700 mr-2 mt-1">•</span>
                         <span
                             >Aplicar las normas, controles y procedimientos
                             preventivos para el uso adecuado de los bienes y
@@ -148,7 +160,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <!-- Miembros del Consejo -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div
-                    class="bg-white border-2 border-blue-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                    class="bg-white border-2 border-cmap-verde-700 rounded-lg p-4 hover:shadow-md transition-shadow"
                 >
                     <div class="flex items-start">
                         <div class="w-2 h-full bg-blue-600 rounded mr-3"></div>
@@ -156,14 +168,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <h4 class="font-bold text-gray-900 text-sm mb-1">
                                 Profr. Jesús Javier Ceballos Corral
                             </h4>
-                            <p class="text-blue-600 font-semibold text-xs">
+                            <p
+                                class="text-cmap-verde-700 font-semibold text-xs"
+                            >
                                 Presidente
                             </p>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="bg-white border-2 border-blue-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                    class="bg-white border-2 border-cmap-verde-700 rounded-lg p-4 hover:shadow-md transition-shadow"
                 >
                     <div class="flex items-start">
                         <div class="w-2 h-full bg-blue-600 rounded mr-3"></div>
@@ -171,14 +185,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <h4 class="font-bold text-gray-900 text-sm mb-1">
                                 Profr. Miguel Francisco García Maldonado
                             </h4>
-                            <p class="text-blue-600 font-semibold text-xs">
+                            <p
+                                class="text-cmap-verde-700 font-semibold text-xs"
+                            >
                                 Vicepresidente de Servicios Financieros
                             </p>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="bg-white border-2 border-blue-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                    class="bg-white border-2 border-cmap-verde-700 rounded-lg p-4 hover:shadow-md transition-shadow"
                 >
                     <div class="flex items-start">
                         <div class="w-2 h-full bg-blue-600 rounded mr-3"></div>
@@ -186,14 +202,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <h4 class="font-bold text-gray-900 text-sm mb-1">
                                 Profr. Manuel Palafox Trillas
                             </h4>
-                            <p class="text-blue-600 font-semibold text-xs">
+                            <p
+                                class="text-cmap-verde-700 font-semibold text-xs"
+                            >
                                 Vicepresidente de Área Social
                             </p>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="bg-white border-2 border-purple-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                    class="bg-white border-2 border-cmap-naranja-500 rounded-lg p-4 hover:shadow-md transition-shadow"
                 >
                     <div class="flex items-start">
                         <div class="w-2 h-full bg-purple-600 rounded mr-3">
@@ -202,14 +220,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <h4 class="font-bold text-gray-900 text-sm mb-1">
                                 Profr. Aldo Rubén Búzani Barreras
                             </h4>
-                            <p class="text-purple-600 font-semibold text-xs">
+                            <p
+                                class="text-cmap-naranja-600 font-semibold text-xs"
+                            >
                                 Director General
                             </p>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="bg-white border-2 border-purple-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                    class="bg-white border-2 border-cmap-naranja-500 rounded-lg p-4 hover:shadow-md transition-shadow"
                 >
                     <div class="flex items-start">
                         <div class="w-2 h-full bg-purple-600 rounded mr-3">
@@ -218,14 +238,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <h4 class="font-bold text-gray-900 text-sm mb-1">
                                 Profra. Yolva Rivas Vega
                             </h4>
-                            <p class="text-purple-600 font-semibold text-xs">
+                            <p
+                                class="text-cmap-naranja-600 font-semibold text-xs"
+                            >
                                 Subdirectora de Asistencia Social
                             </p>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="bg-white border-2 border-purple-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                    class="bg-white border-2 border-cmap-naranja-500 rounded-lg p-4 hover:shadow-md transition-shadow"
                 >
                     <div class="flex items-start">
                         <div class="w-2 h-full bg-purple-600 rounded mr-3">
@@ -234,7 +256,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <h4 class="font-bold text-gray-900 text-sm mb-1">
                                 Profra. María del Carmen Ibarra Encinas
                             </h4>
-                            <p class="text-purple-600 font-semibold text-xs">
+                            <p
+                                class="text-cmap-naranja-600 font-semibold text-xs"
+                            >
                                 Subdirectora de Servicios Financieros
                             </p>
                         </div>
@@ -289,7 +313,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 </p>
 
                 <div
-                    class="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 ml-4"
+                    class="border-l-4 border-cmap-verde-700 rounded-r-lg p-4 ml-4"
                 >
                     <p class="mb-2">
                         <strong>1.- Primera Etapa:</strong> se recibieron $290,000.00
@@ -353,7 +377,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <section class="relative py-16 px-4 mb-8 overflow-hidden">
             <!-- Background decorativo -->
             <div
-                class="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 opacity-95"
+                class="absolute inset-0 bg-gradient-to-br from-white via-white to-white opacity-95"
             >
             </div>
             <div
@@ -368,15 +392,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     <div class="inline-block">
                         <div class="flex items-center gap-3 mb-4">
                             <div
-                                class="h-1 w-12 bg-gradient-to-r from-transparent to-cyan-400"
+                                class="h-1 w-12 bg-gradient-to-r from-transparent to-cmap-naranja-600"
                             >
                             </div>
                             <span
-                                class="text-cyan-400 text-sm font-bold tracking-widest uppercase"
+                                class="text-cmap-naranja-600 text-sm font-bold tracking-widest uppercase"
                                 >Legado</span
                             >
                             <div
-                                class="h-1 w-12 bg-gradient-to-l from-transparent to-cyan-400"
+                                class="h-1 w-12 bg-gradient-to-l from-transparent to-cmap-naranja-600"
                             >
                             </div>
                         </div>
@@ -384,11 +408,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             class="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight"
                         >
                             <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400"
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-cmap-naranja-700 to-cmap-naranja-500"
                                 >DIRECTORES</span
                             >
                         </h2>
-                        <p class="text-gray-300 text-lg">
+                        <p class="text-gray-800 text-lg">
                             Líderes que construyeron nuestro presente
                         </p>
                     </div>
@@ -398,22 +422,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <div class="relative">
                     <!-- Línea de tiempo diagonal creativa -->
                     <div class="grid md:grid-cols-3 gap-6">
-                        <!-- 2022-2026 -->
+                        <!-- 2022-2026 · VERDE -->
                         <div class="group relative">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-verde-700 to-cmap-verde-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-verde-700/30 hover:border-cmap-verde-400 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cyan-500 to-blue-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-verde-500 to-cmap-verde-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     2022 - 2026
                                 </div>
                                 <div
-                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-4xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-verde-700 to-cmap-verde-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     ⭐
                                 </div>
@@ -423,36 +447,29 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     Profr. Aldo Rubén Búzani Barreras
                                 </h3>
                                 <p
-                                    class="text-cyan-400 text-sm text-center font-semibold"
+                                    class="text-cmap-verde-600 text-sm text-center font-semibold"
                                 >
                                     Director General
                                 </p>
-                                <div
-                                    class="mt-4 pt-4 border-t border-cyan-500/30"
-                                >
-                                    <span class="text-gray-400 text-xs"
-                                        >Administración Actual</span
-                                    >
-                                </div>
                             </div>
                         </div>
 
-                        <!-- 2016-2022 -->
+                        <!-- 2016-2022 · NARANJA -->
                         <div class="group relative md:mt-12">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-naranja-700 to-cmap-naranja-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 hover:border-purple-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-naranja-600/30 hover:border-cmap-naranja-600 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-purple-500 to-pink-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-naranja-500 to-cmap-naranja-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     2016 - 2022
                                 </div>
                                 <div
-                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-4xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-naranja-700 to-cmap-naranja-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     👔
                                 </div>
@@ -461,32 +478,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                 >
                                     Profr. Jesús Javier Ceballos Corral
                                 </h3>
-                                <div
-                                    class="mt-4 pt-4 border-t border-purple-500/30"
-                                >
-                                    <span class="text-gray-400 text-xs"
-                                        >6 años de liderazgo</span
-                                    >
-                                </div>
                             </div>
                         </div>
 
-                        <!-- 2012-2016 -->
+                        <!-- 2012-2016 · AMARILLO -->
                         <div class="group relative md:mt-24">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-amarillo-500 to-cmap-amarillo-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30 hover:border-blue-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-amarillo-500/30 hover:border-cmap-amarillo-500 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-blue-500 to-indigo-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-amarillo-500 to-cmap-amarillo-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     2012 - 2016
                                 </div>
                                 <div
-                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-4xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-amarillo-500 to-cmap-amarillo-700 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     💼
                                 </div>
@@ -498,22 +508,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- 2008-2012 -->
+                        <!-- 2008-2012 · VERDE -->
                         <div class="group relative">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-verde-700 to-cmap-verde-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-emerald-500/30 hover:border-emerald-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-verde-700/30 hover:border-cmap-verde-400 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-emerald-500 to-teal-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-verde-500 to-cmap-verde-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     2008 - 2012
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-verde-700 to-cmap-verde-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     🎓
                                 </div>
@@ -525,22 +535,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- 2004-2007 -->
+                        <!-- 2004-2007 · NARANJA -->
                         <div class="group relative md:mt-12">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-naranja-700 to-cmap-naranja-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-amber-500/30 hover:border-amber-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-naranja-600/30 hover:border-cmap-naranja-600 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-amber-500 to-orange-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-naranja-500 to-cmap-naranja-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     2004 - 2007
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-naranja-700 to-cmap-naranja-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     📚
                                 </div>
@@ -552,22 +562,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- 2001-2003 -->
+                        <!-- 2001-2003 · AMARILLO -->
                         <div class="group relative md:mt-24">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-rose-500 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-amarillo-500 to-cmap-amarillo-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-rose-500/30 hover:border-rose-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-amarillo-500/30 hover:border-cmap-amarillo-500 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-rose-500 to-pink-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-amarillo-500 to-cmap-amarillo-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     2001 - 2003
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-amarillo-500 to-cmap-amarillo-700 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     🌸
                                 </div>
@@ -579,22 +589,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- 1998-2000 -->
+                        <!-- 1998-2000 · VERDE -->
                         <div class="group relative">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-violet-500 to-purple-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-verde-700 to-cmap-verde-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-violet-500/30 hover:border-violet-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-verde-700/30 hover:border-cmap-verde-400 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-violet-500 to-purple-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-verde-500 to-cmap-verde-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     1998 - 2000
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-verde-700 to-cmap-verde-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     📖
                                 </div>
@@ -606,22 +616,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- 1995-1997 -->
+                        <!-- 1995-1997 · NARANJA -->
                         <div class="group relative md:mt-12">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-fuchsia-500 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-naranja-700 to-cmap-naranja-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-fuchsia-500/30 hover:border-fuchsia-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-naranja-600/30 hover:border-cmap-naranja-600 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-fuchsia-500 to-pink-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-naranja-500 to-cmap-naranja-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     1995 - 1997
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-fuchsia-400 to-pink-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-naranja-700 to-cmap-naranja-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     💐
                                 </div>
@@ -633,22 +643,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- 1992-1994 -->
+                        <!-- 1992-1994 · AMARILLO -->
                         <div class="group relative md:mt-24">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-amarillo-500 to-cmap-amarillo-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-sky-500/30 hover:border-sky-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-amarillo-500/30 hover:border-cmap-amarillo-500 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-sky-500 to-cyan-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-amarillo-500 to-cmap-amarillo-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     1992 - 1994
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-sky-400 to-cyan-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-amarillo-500 to-cmap-amarillo-700 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     🏛️
                                 </div>
@@ -660,22 +670,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- 1989-1991 -->
+                        <!-- 1989-1991 · VERDE -->
                         <div class="group relative">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-verde-700 to-cmap-verde-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-teal-500/30 hover:border-teal-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-verde-700/30 hover:border-cmap-verde-400 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-teal-500 to-emerald-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-verde-500 to-cmap-verde-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     1989 - 1991
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-teal-400 to-emerald-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-verde-700 to-cmap-verde-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     🎯
                                 </div>
@@ -687,22 +697,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- 1982-1985 -->
+                        <!-- 1982-1985 · NARANJA -->
                         <div class="group relative md:mt-12">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-lime-500 to-green-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-naranja-700 to-cmap-naranja-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-lime-500/30 hover:border-lime-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-naranja-600/30 hover:border-cmap-naranja-600 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-lime-500 to-green-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-naranja-500 to-cmap-naranja-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     1982 - 1985
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-naranja-700 to-cmap-naranja-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     🌟
                                 </div>
@@ -714,22 +724,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- 1979-1981 -->
+                        <!-- 1979-1981 · AMARILLO -->
                         <div class="group relative md:mt-24">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-amarillo-500 to-cmap-amarillo-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/30 hover:border-yellow-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-amarillo-500/30 hover:border-cmap-amarillo-500 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-yellow-500 to-amber-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-amarillo-500 to-cmap-amarillo-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     1979 - 1981
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-amarillo-500 to-cmap-amarillo-700 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     ⚡
                                 </div>
@@ -741,22 +751,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- Diciembre 1978 -->
+                        <!-- Dic 1978 · VERDE -->
                         <div class="group relative">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-verde-700 to-cmap-verde-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-orange-500/30 hover:border-orange-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-verde-700/30 hover:border-cmap-verde-400 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-orange-500 to-red-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-verde-500 to-cmap-verde-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     Dic 1978
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-verde-700 to-cmap-verde-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     🎨
                                 </div>
@@ -768,22 +778,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
                         </div>
 
-                        <!-- Abril 1978 -->
+                        <!-- Abr 1978 · NARANJA -->
                         <div class="group relative md:mt-12">
                             <div
-                                class="absolute -inset-1 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
+                                class="absolute -inset-1 bg-gradient-to-r from-cmap-naranja-700 to-cmap-naranja-700 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"
                             >
                             </div>
                             <div
-                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-red-500/30 hover:border-red-400 transition-all duration-300"
+                                class="relative bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-cmap-naranja-600/30 hover:border-cmap-naranja-600 transition-all duration-300"
                             >
                                 <div
-                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-red-500 to-orange-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                                    class="absolute -top-3 -right-3 bg-gradient-to-br from-cmap-naranja-500 to-cmap-naranja-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                                 >
                                     Abr 1978
                                 </div>
                                 <div
-                                    class="h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-400 to-orange-500 flex items-center justify-center text-3xl shadow-xl"
+                                    class="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-cmap-naranja-700 to-cmap-naranja-500 flex items-center justify-center text-4xl shadow-xl"
                                 >
                                     🏛️
                                 </div>
