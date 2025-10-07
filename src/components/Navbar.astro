@@ -1,7 +1,13 @@
 ---
 /* Componente Navbar para CMAP */
+const { pathname } = Astro.url;
+const isActive = (href: string) => href === pathname;
 ---
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+
+<nav
+  transition:persist
+  class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200"
+>
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
@@ -42,28 +48,36 @@
           class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
         >
           Inicio
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"></span>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"
+          ></span>
         </a>
         <a
           href="/acerca"
           class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
         >
           Nosotros
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"></span>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"
+          ></span>
         </a>
         <a
           href="/contacto"
           class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
         >
           Contacto
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"></span>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"
+          ></span>
         </a>
         <a
           href="/documentos"
           class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
         >
           Documentos
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"></span>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"
+          ></span>
         </a>
         <a
           href="https://app.cmapsnte54.com.mx/CMAP_F2/Identity/Account/Login"
@@ -187,7 +201,9 @@
 
       <!-- Redes Sociales Mobile -->
       <div class="px-6 py-6 bg-gray-50 border-t border-gray-200">
-        <p class="text-sm text-gray-600 mb-4 font-medium">Síguenos en redes sociales</p>
+        <p class="text-sm text-gray-600 mb-4 font-medium">
+          Síguenos en redes sociales
+        </p>
         <div class="flex space-x-4">
           <a
             href="https://facebook.com"
@@ -276,5 +292,8 @@
     #mobile-menu {
       box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
     }
+  }
+  nav[transition\:persist] {
+    view-transition-name: none; /* extra por si acaso */
   }
 </style>

@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions"; // 👈 NUEVO
 const { title = "CMAP SNTE 54" } = Astro.props;
 ---
 
@@ -10,12 +11,12 @@ const { title = "CMAP SNTE 54" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-
     <link rel="icon" type="image/svg+xml" href="/CMAP LOGO.svg" />
+    <ClientRouter />
   </head>
   <body>
     <Navbar />
-    <main>
+    <main transition:name="page">
       <slot />
     </main>
     <Footer />

@@ -43,19 +43,19 @@ const asambleas = [
 // ========= Helpers de estilos (gradientes por slider y CTA semántico) =========
 const portadaGrad = {
  formatos:
-  "bg-[linear-gradient(to_bottom_right,var(--color-cmap-amarillo-50),var(--color-cmap-naranja-50))] " +
-  "bg-[radial-gradient(120%_120%_at_80%_0%,var(--color-cmap-amarillo-200)_0%,transparent_60%),radial-gradient(120%_120%_at_0%_100%,var(--color-cmap-naranja-200)_0%,transparent_60%)]",
+  "bg-[linear-gradient(to_bottom_right,var(--color-cmap-naranja-50),var(--color-cmap-naranja-50))] " +
+  "bg-[radial-gradient(120%_120%_at_80%_0%,var(--color-cmap-naranja-100)_0%,transparent_60%),radial-gradient(120%_120%_at_0%_100%,var(--color-cmap-naranja-100)_0%,transparent_60%)]",
 comunicados:
     "bg-[linear-gradient(to_bottom_right,#fff,var(--color-cmap-crema-50))] " +
-    "bg-[radial-gradient(110%_110%_at_10%_0%,var(--color-cmap-amarillo-100)_0%,transparent_60%),radial-gradient(110%_110%_at_100%_100%,var(--color-cmap-naranja-100)_0%,transparent_60%)]",
+    "bg-[radial-gradient(110%_110%_at_10%_0%,var(--color-cmap-naranja-100)_0%,transparent_60%),radial-gradient(110%_110%_at_100%_100%,var(--color-cmap-naranja-100)_0%,transparent_60%)]",
   asambleas:
     "bg-[linear-gradient(to_bottom_right,var(--color-cmap-crema-50),#fff)] " +
-    "bg-[radial-gradient(110%_110%_at_100%_0%,var(--color-cmap-naranja-oscuro-100)_0%,transparent_60%),radial-gradient(110%_110%_at_0%_100%,var(--color-cmap-amarillo-100)_0%,transparent_60%)]",
+    "bg-[radial-gradient(110%_110%_at_100%_0%,var(--color-cmap-naranja-oscuro-100)_0%,transparent_60%),radial-gradient(110%_110%_at_0%_100%,var(--color-cmap-naranja-100)_0%,transparent_60%)]",
 };
 
 const ctaGrad = {
   formatos:
-  "bg-gradient-to-r from-[var(--color-cmap-naranja-oscuro-500)] to-[var(--color-cmap-naranja-oscuro-700)] hover:from-[var(--color-cmap-naranja-oscuro-600)] hover:to-[var(--color-cmap-naranja-oscuro-800)]",
+    "bg-gradient-to-r from-[var(--color-cmap-naranja-500)] to-[var(--color-cmap-naranja-700)] hover:from-[var(--color-cmap-naranja-600)] hover:to-[var(--color-cmap-naranja-800)]",
  comunicados:
     "bg-gradient-to-r from-[var(--color-cmap-verde-600)] to-[var(--color-cmap-verde-700)] hover:from-[var(--color-cmap-verde-700)] hover:to-[var(--color-cmap-verde-800)]",
   asambleas:
@@ -69,7 +69,7 @@ const ctaFormato = (name: string) => {
 
 // Colores de icono por slider
 const iconColor = {
-  formatos: "text-[color:var(--color-cmap-naranja-oscuro-600)]",
+  formatos: "text-[color:var(--color-cmap-naranja-600)]",
   comunicados: "text-[color:var(--color-cmap-verde-700)]",
   asambleas: "text-[color:var(--color-cmap-cafe-700)]",
 };
@@ -90,14 +90,16 @@ const chip =
           <span class="text-4xl">📄</span>
         </div>
       </div>
-      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Documentos</h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Consulta nuestros formatos, comunicados oficiales y actas de asambleas</p>
+        <h1 transition:name="page-title" class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+          Documentos
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Consulta nuestros formatos, comunicados oficiales y actas de asambleas</p>
     </header>
 
     <!-- ========================= Formatos ========================= -->
     <section class="mb-20">
       <div class="flex items-center mb-8 space-x-4">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br from-[var(--color-cmap-naranja-600)] to-[var(--color-cmap-naranja-700)]">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br from-[var(--color-cmap-naranja)] to-[var(--color-cmap-naranja-700)]">
           <span class="text-2xl">📋</span>
         </div>
         <div>
@@ -110,11 +112,11 @@ const chip =
         <div class="slider-asambleas flex gap-6 animate-scroll-right">
           {formatos.concat(formatos).map((doc) => (
          <a
-  href={doc.file}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="doc-card flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-gray-200 hover:border-[color:var(--color-cmap-naranja-oscuro-500)]"
->
+           href={doc.file}
+           target="_blank"
+           rel="noopener noreferrer"
+           class="doc-card flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-gray-200 hover:border-[color:var(--color-cmap-naranja-700)]"
+          >
               <div class="h-full flex flex-col">
                 <!-- Portada -->
                 <div class={`flex-1 p-8 relative overflow-hidden ${portadaGrad.formatos}`}>
@@ -133,7 +135,7 @@ const chip =
                 </div>
 
                 <!-- CTA -->
-                <div class={`p-4 text-white text-center transition-all ${ctaFormato(doc.name)}`}>
+                <div class={`p-4 text-white text-center transition-all bg-gradient-to-r from-[var(--color-cmap-naranja-500)] to-[var(--color-cmap-naranja-600)] hover:from-[var(--color-cmap-naranja-600)] hover:to-[var(--color-cmap-naranja-700)]${doc.name}`}>
                   <p class="font-semibold text-sm flex items-center justify-center space-x-2">
                     <span>Ver Formato</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
