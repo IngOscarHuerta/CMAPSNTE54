@@ -1,14 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-// Datos (los tuyos)
+// Datos
 const formatos = [
   { order: 1, name: "Solicitud de Préstamo", file: "/public/formatos/Solicitud de Prestamo.pdf" },
   { order: 1, name: "Solicitud de Devolución", file: "/public/formatos/Solicitud de Devolucion.pdf" },
   { order: 3, name: "Solicitud de Gastos Médicos", file: "/public/formatos/Solicitud de Gastos Medicos.pdf" },
   { order: 4, name: "Solicitud de Gastos Funerarios", file: "/public/formatos/Solicitud de Gastos Funerarios.pdf" },
   { order: 5, name: "Poliza de Seguro Hogar", file: "/public/formatos/Poliza de Seguro Hogar.pdf" },
-  { order: 6, name: "Solicitud de Préstamo de Póliza de Seguro", file: "/public/formatos/Solicitud Prestamo de Poliza de Seguro.pdf" },
+  { order: 6, name: "Solicitud de Préstamo de Póliza de Seguro", file: "/public/formatos/Solicitud de Prestamo de Poliza de Seguro.pdf" },
   { order: 7, name: "Solicitud de Préstamos de Desastres Naturales", file: "/public/formatos/Solicitud de Prestamos de Desastres Naturales.pdf" },
   { order: 8, name: "Solicitud de Bono para el Retiro", file: "/public/formatos/Solicitud de Bono para el Retiro.pdf" },
 ];
@@ -37,15 +37,15 @@ const asambleas = [
   { order: 13, name: "XXII Asamblea Ordinaria de CMAP Informe", file: "/public/documentos/22.pdf" },
   { order: 14, name: "XXII Asamblea Ordinaria de CMAP Informe", file: "/public/documentos/22 Extraordinario.pdf" },
   { order: 15, name: "XXIII Asamblea Ordinaria de CMAP Informe", file: "/public/documentos/23.pdf" },
-  { order: 16, name: "Catálogo de Servicios Financieros de CMAP SNTE 54", file: "/public/documentos/25 Catalogo de Servicios.pdf" },
+  { order: 16, name: "Catálogo de Servicios Financieros de CMAP SNTE 54", file: "/public/documentos/25 Catalogo Servicios.pdf" },
 ];
 
-// ========= Helpers de estilos (gradientes por slider y CTA semántico) =========
+// ========= Helpers de estilos =========
 const portadaGrad = {
- formatos:
-  "bg-[linear-gradient(to_bottom_right,var(--color-cmap-naranja-50),var(--color-cmap-naranja-50))] " +
-  "bg-[radial-gradient(120%_120%_at_80%_0%,var(--color-cmap-naranja-100)_0%,transparent_60%),radial-gradient(120%_120%_at_0%_100%,var(--color-cmap-naranja-100)_0%,transparent_60%)]",
-comunicados:
+  formatos:
+    "bg-[linear-gradient(to_bottom_right,var(--color-cmap-naranja-50),var(--color-cmap-naranja-50))] " +
+    "bg-[radial-gradient(120%_120%_at_80%_0%,var(--color-cmap-naranja-100)_0%,transparent_60%),radial-gradient(120%_120%_at_0%_100%,var(--color-cmap-naranja-100)_0%,transparent_60%)]",
+  comunicados:
     "bg-[linear-gradient(to_bottom_right,#fff,var(--color-cmap-crema-50))] " +
     "bg-[radial-gradient(110%_110%_at_10%_0%,var(--color-cmap-naranja-100)_0%,transparent_60%),radial-gradient(110%_110%_at_100%_100%,var(--color-cmap-naranja-100)_0%,transparent_60%)]",
   asambleas:
@@ -56,82 +56,94 @@ comunicados:
 const ctaGrad = {
   formatos:
     "bg-gradient-to-r from-[var(--color-cmap-naranja-500)] to-[var(--color-cmap-naranja-700)] hover:from-[var(--color-cmap-naranja-600)] hover:to-[var(--color-cmap-naranja-800)]",
- comunicados:
+  comunicados:
     "bg-gradient-to-r from-[var(--color-cmap-verde-600)] to-[var(--color-cmap-verde-700)] hover:from-[var(--color-cmap-verde-700)] hover:to-[var(--color-cmap-verde-800)]",
   asambleas:
     "bg-gradient-to-r from-[var(--color-cmap-cafe-600)] to-[var(--color-cmap-cafe-800)] hover:from-[var(--color-cmap-cafe-700)] hover:to-[var(--color-cmap-cafe-900)]",
 };
 
-// CTA por tipo dentro de Formatos
-const ctaFormato = (name: string) => {
-  return ctaGrad.formatos;                                   // naranja
-};
-
-// Colores de icono por slider
 const iconColor = {
   formatos: "text-[color:var(--color-cmap-naranja-600)]",
   comunicados: "text-[color:var(--color-cmap-verde-700)]",
   asambleas: "text-[color:var(--color-cmap-cafe-700)]",
 };
 
-// Chip translúcido reutilizable
+// Chip translúcido (responsive)
 const chip =
-  "w-20 h-20 rounded-2xl shadow-lg flex items-center justify-center mb-4 mx-auto " +
+  "rounded-2xl shadow-lg flex items-center justify-center mb-3 md:mb-4 mx-auto " +
   "bg-[linear-gradient(to_bottom_right,rgba(255,255,255,.95),rgba(255,255,255,.75))] " +
-  "group-hover:scale-110 transition-transform";
+  "group-hover:scale-110 transition-transform w-14 h-14 md:w-20 md:h-20";
 ---
 
 <BaseLayout title="Documentos">
-  <div class="container mx-auto px-4 py-12 max-w-7xl">
+  <div class="container mx-auto px-4 py-10 md:py-12 max-w-7xl">
     <!-- Header -->
-    <header class="text-center mb-16">
-        <h1 transition:name="page-title" class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-          Documentos
-        </h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Consulta nuestros formatos, comunicados oficiales y actas de asambleas</p>
+    <header class="text-center mb-10 md:mb-16">
+      <h1 transition:name="page-title" class="text-4xl md:text-6xl font-bold text-gray-900 mb-3 md:mb-4">
+        Documentos
+      </h1>
+      <p class="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">Consulta nuestros formatos, comunicados oficiales y actas de asambleas</p>
     </header>
 
     <!-- ========================= Formatos ========================= -->
-    <section class="mb-20">
-      <div class="flex items-center mb-8 space-x-4">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br from-[var(--color-cmap-naranja)] to-[var(--color-cmap-naranja-700)]">
-          <span class="text-2xl">📋</span>
+    <section class="mb-14 md:mb-20">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 mb-6 md:mb-8">
+        <div class="flex items-center gap-3 md:gap-4">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br from-[var(--color-cmap-naranja)] to-[var(--color-cmap-naranja-700)]">
+            <span class="text-xl md:text-2xl">📋</span>
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Formatos</h2>
+            <p class="text-gray-600 text-sm md:text-base">Solicitudes de formatos oficiales</p>
+          </div>
         </div>
-        <div>
-          <h2 class="text-3xl font-bold text-gray-900">Formatos</h2>
-          <p class="text-gray-600">Solicitudes de formatos oficiales</p>
+
+        <!-- Dropdown Formatos -->
+        <div class="w-full md:w-96">
+          <label class="sr-only" for="ddl-formatos">Abrir formato</label>
+          <div class="relative">
+            <select id="ddl-formatos"
+              class="cursor-pointer w-full appearance-none bg-white rounded-2xl shadow-lg border-2 border-gray-200 hover:border-[color:var(--color-cmap-naranja-700)] px-3 md:px-4 py-2.5 md:py-3 pr-9 md:pr-10 font-medium text-gray-700 text-sm md:text-base focus:outline-none focus:ring-4 focus:ring-[color:var(--color-cmap-naranja-200)] transition"
+              onchange="if(this.value){ window.open(this.value, '_blank', 'noopener'); this.selectedIndex=0; }">
+              <option value="">Selecciona un formato…</option>
+              {formatos.map((d) => <option value={d.file}>{d.name}</option>)}
+            </select>
+            <svg class="pointer-events-none absolute right-2.5 md:right-3 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
         </div>
       </div>
 
-      <div class="relative overflow-hidden py-8">
-        <div class="slider-asambleas flex gap-6 animate-scroll-right">
+      <div class="relative overflow-hidden py-6 md:py-8">
+        <div class="slider-formatos flex gap-4 md:gap-6 animate-scroll-right">
           {formatos.concat(formatos).map((doc) => (
-         <a
-           href={doc.file}
-           target="_blank"
-           rel="noopener noreferrer"
-           class="doc-card flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-gray-200 hover:border-[color:var(--color-cmap-naranja-700)]"
-          >
+            <a
+              href={doc.file}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="doc-card cursor-pointer flex-shrink-0 w-64 h-80 md:w-80 md:h-96 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-gray-200 hover:border-[color:var(--color-cmap-naranja-700)]"
+            >
               <div class="h-full flex flex-col">
                 <!-- Portada -->
-                <div class={`flex-1 p-8 relative overflow-hidden ${portadaGrad.formatos}`}>
+                <div class={`flex-1 p-5 md:p-8 relative overflow-hidden ${portadaGrad.formatos}`}>
                   <div class="relative z-10 h-full flex flex-col">
                     <div class="flex-1 flex items-center justify-center">
                       <div class="text-center">
                         <div class={chip}>
-                          <svg class={`w-10 h-10 ${iconColor.formatos}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg class={`w-7 h-7 md:w-10 md:h-10 ${iconColor.formatos}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                           </svg>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-[color:var(--color-cmap-naranja-700)] transition-colors">{doc.name}</h3>
+                        <h3 class="text-sm md:text-lg font-bold text-gray-900 group-hover:text-[color:var(--color-cmap-naranja-700)] transition-colors line-clamp-2">{doc.name}</h3>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <!-- CTA -->
-                <div class={`p-4 text-white text-center transition-all bg-gradient-to-r from-[var(--color-cmap-naranja-500)] to-[var(--color-cmap-naranja-600)] hover:from-[var(--color-cmap-naranja-600)] hover:to-[var(--color-cmap-naranja-700)]${doc.name}`}>
-                  <p class="font-semibold text-sm flex items-center justify-center space-x-2">
+                <div class="p-3 md:p-4 text-white text-xs md:text-sm text-center transition-all bg-gradient-to-r from-[var(--color-cmap-naranja-500)] to-[var(--color-cmap-naranja-600)] hover:from-[var(--color-cmap-naranja-600)] hover:to-[var(--color-cmap-naranja-700)]">
+                  <p class="font-semibold flex items-center justify-center space-x-2">
                     <span>Ver Formato</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -146,46 +158,64 @@ const chip =
     </section>
 
     <!-- ===================== Comunicados y Avisos ===================== -->
-    <section class="mb-20">
-      <div class="flex items-center mb-8 space-x-4">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br from-[var(--color-cmap-verde-600)] to-[var(--color-cmap-verde-700)]">
-          <span class="text-2xl">📢</span>
+    <section class="mb-14 md:mb-20">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 mb-6 md:mb-8">
+        <div class="flex items-center gap-3 md:gap-4">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br from-[var(--color-cmap-verde-600)] to-[var(--color-cmap-verde-700)]">
+            <span class="text-xl md:text-2xl">📢</span>
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Comunicados y Avisos</h2>
+            <p class="text-gray-600 text-sm md:text-base">Información oficial y actualizaciones</p>
+          </div>
         </div>
-        <div>
-          <h2 class="text-3xl font-bold text-gray-900">Comunicados y Avisos</h2>
-          <p class="text-gray-600">Información oficial y actualizaciones</p>
+
+        <!-- Dropdown Comunicados -->
+        <div class="w-full md:w-96">
+          <label class="sr-only" for="ddl-comunicados">Abrir comunicado</label>
+          <div class="relative">
+            <select id="ddl-comunicados"
+              class="cursor-pointer w-full appearance-none bg-white rounded-2xl shadow-lg border-2 border-gray-200 hover:border-[color:var(--color-cmap-verde-600)] px-3 md:px-4 py-2.5 md:py-3 pr-9 md:pr-10 font-medium text-gray-700 text-sm md:text-base focus:outline-none focus:ring-4 focus:ring-[color:var(--color-cmap-verde-200)] transition"
+              onchange="if(this.value){ window.open(this.value, '_blank', 'noopener'); this.selectedIndex=0; }">
+              <option value="">Selecciona un comunicado…</option>
+              {comunicados.map((d) => <option value={d.file}>{d.name}</option>)}
+            </select>
+            <svg class="pointer-events-none absolute right-2.5 md:right-3 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
         </div>
       </div>
 
-      <div class="relative overflow-hidden py-8">
-        <div class="slider-comunicados flex gap-6 animate-scroll-left">
+      <div class="relative overflow-hidden py-6 md:py-8">
+        <div class="slider-comunicados flex gap-4 md:gap-6 animate-scroll-left">
           {comunicados.concat(comunicados).map((doc) => (
             <a
               href={doc.file}
               target="_blank"
               rel="noopener noreferrer"
-              class="doc-card flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-gray-200 hover:border-[color:var(--color-cmap-verde-600)]"
+              class="doc-card cursor-pointer flex-shrink-0 w-64 h-80 md:w-80 md:h-96 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-gray-200 hover:border-[color:var(--color-cmap-verde-600)]"
             >
               <div class="h-full flex flex-col">
                 <!-- Portada -->
-                <div class={`flex-1 p-8 relative overflow-hidden ${portadaGrad.comunicados}`}>
+                <div class={`flex-1 p-5 md:p-8 relative overflow-hidden ${portadaGrad.comunicados}`}>
                   <div class="relative z-10 h-full flex flex-col">
                     <div class="flex-1 flex items-center justify-center">
                       <div class="text-center">
                         <div class={chip}>
-                          <svg class={`w-10 h-10 ${iconColor.comunicados}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg class={`w-7 h-7 md:w-10 md:h-10 ${iconColor.comunicados}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                           </svg>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-[color:var(--color-cmap-verde-700)] transition-colors">{doc.name}</h3>
+                        <h3 class="text-sm md:text-lg font-bold text-gray-900 group-hover:text-[color:var(--color-cmap-verde-700)] transition-colors line-clamp-2">{doc.name}</h3>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <!-- CTA -->
-                <div class={`p-4 text-white text-center transition-all ${ctaGrad.comunicados}`}>
-                  <p class="font-semibold text-sm flex items-center justify-center space-x-2">
+                <div class={ctaGrad.comunicados + " p-3 md:p-4 text-white text-xs md:text-sm text-center"}>
+                  <p class="font-semibold flex items-center justify-center space-x-2">
                     <span>Ver Documento</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -201,45 +231,63 @@ const chip =
 
     <!-- ===================== Asambleas y Acuerdos ===================== -->
     <section>
-      <div class="flex items-center mb-8 space-x-4">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br from-[var(--color-cmap-cafe-600)] to-[var(--color-cmap-cafe-700)]">
-          <span class="text-2xl">📋</span>
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 mb-6 md:mb-8">
+        <div class="flex items-center gap-3 md:gap-4">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br from-[var(--color-cmap-cafe-600)] to-[var(--color-cmap-cafe-700)]">
+            <span class="text-xl md:text-2xl">📋</span>
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Asambleas y Acuerdos</h2>
+            <p class="text-gray-600 text-sm md:text-base">Actas y resoluciones oficiales</p>
+          </div>
         </div>
-        <div>
-          <h2 class="text-3xl font-bold text-gray-900">Asambleas y Acuerdos</h2>
-          <p class="text-gray-600">Actas y resoluciones oficiales</p>
+
+        <!-- Dropdown Asambleas -->
+        <div class="w-full md:w-96">
+          <label class="sr-only" for="ddl-asambleas">Abrir asamblea o acuerdo</label>
+          <div class="relative">
+            <select id="ddl-asambleas"
+              class="cursor-pointer w-full appearance-none bg-white rounded-2xl shadow-lg border-2 border-gray-200 hover:border-[color:var(--color-cmap-cafe-600)] px-3 md:px-4 py-2.5 md:py-3 pr-9 md:pr-10 font-medium text-gray-700 text-sm md:text-base focus:outline-none focus:ring-4 focus:ring-[color:var(--color-cmap-cafe-200)] transition"
+              onchange="if(this.value){ window.open(this.value, '_blank', 'noopener'); this.selectedIndex=0; }">
+              <option value="">Selecciona un documento…</option>
+              {asambleas.map((d) => <option value={d.file}>{d.name}</option>)}
+            </select>
+            <svg class="pointer-events-none absolute right-2.5 md:right-3 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
         </div>
       </div>
 
-      <div class="relative overflow-hidden py-8">
-        <div class="slider-asambleas flex gap-6 animate-scroll-right">
+      <div class="relative overflow-hidden py-6 md:py-8">
+        <div class="slider-asambleas flex gap-4 md:gap-6 animate-scroll-right">
           {asambleas.concat(asambleas).map((doc) => (
             <a
               href={doc.file}
               target="_blank"
               rel="noopener noreferrer"
-              class="doc-card flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-gray-200 hover:border-[color:var(--color-cmap-cafe-600)]"
+              class="doc-card cursor-pointer flex-shrink-0 w-64 h-80 md:w-80 md:h-96 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-gray-200 hover:border-[color:var(--color-cmap-cafe-600)]"
             >
               <div class="h-full flex flex-col">
                 <!-- Portada -->
-                <div class={`flex-1 p-8 relative overflow-hidden ${portadaGrad.asambleas}`}>
+                <div class={`flex-1 p-5 md:p-8 relative overflow-hidden ${portadaGrad.asambleas}`}>
                   <div class="relative z-10 h-full flex flex-col">
                     <div class="flex-1 flex items-center justify-center">
                       <div class="text-center">
                         <div class={chip}>
-                          <svg class={`w-10 h-10 ${iconColor.asambleas}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg class={`w-7 h-7 md:w-10 md:h-10 ${iconColor.asambleas}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                           </svg>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-[color:var(--color-cmap-cafe-700)] transition-colors">{doc.name}</h3>
+                        <h3 class="text-sm md:text-lg font-bold text-gray-900 group-hover:text-[color:var(--color-cmap-cafe-700)] transition-colors line-clamp-2">{doc.name}</h3>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <!-- CTA -->
-                <div class={`p-4 text-white text-center transition-all ${ctaGrad.asambleas}`}>
-                  <p class="font-semibold text-sm flex items-center justify-center space-x-2">
+                <div class={ctaGrad.asambleas + " p-3 md:p-4 text-white text-xs md:text-sm text-center"}>
+                  <p class="font-semibold flex items-center justify-center space-x-2">
                     <span>Ver Documento</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -264,9 +312,11 @@ const chip =
     0% { transform: translateX(-50%); }
     100% { transform: translateX(0); }
   }
+
   .animate-scroll-left { animation: scroll-left 30s linear infinite; }
   .animate-scroll-right { animation: scroll-right 30s linear infinite; }
 
+  .slider-formatos:hover,
   .slider-comunicados:hover,
   .slider-asambleas:hover {
     animation-play-state: paused;
@@ -276,15 +326,18 @@ const chip =
     z-index: 10;
   }
 
-  /* Fundido lateral de cada carrusel */
+  /* Fuerza el cursor de mano en toda la tarjeta */
+  .doc-card { cursor: pointer; }
+
+  /* Fundido lateral adaptable */
   .relative.overflow-hidden::before,
   .relative.overflow-hidden::after {
     content: '';
     position: absolute;
     top: 0; bottom: 0;
-    width: 100px;
+    width: 40px;        /* mobile */
     z-index: 10;
-    pointer-events: none;
+    pointer-events: none; /* evita bloquear el hover/click */
   }
   .relative.overflow-hidden::before {
     left: 0;
@@ -294,17 +347,23 @@ const chip =
     right: 0;
     background: linear-gradient(to left, rgb(249, 250, 251), transparent);
   }
+  @media (min-width: 768px) {
+    .relative.overflow-hidden::before,
+    .relative.overflow-hidden::after {
+      width: 100px;     /* desktop */
+    }
+  }
 </style>
 
 <script>
   // Pausar/reanudar el carrusel cuando el mouse entra/sale sobre una card
   document.querySelectorAll('.doc-card').forEach((card) => {
     card.addEventListener('mouseenter', () => {
-      const slider = card.closest('.slider-comunicados, .slider-asambleas') as HTMLElement;
+      const slider = card.closest('.slider-formatos, .slider-comunicados, .slider-asambleas') as HTMLElement;
       if (slider) slider.style.animationPlayState = 'paused';
     });
     card.addEventListener('mouseleave', () => {
-      const slider = card.closest('.slider-comunicados, .slider-asambleas') as HTMLElement;
+      const slider = card.closest('.slider-formatos, .slider-comunicados, .slider-asambleas') as HTMLElement;
       if (slider) slider.style.animationPlayState = 'running';
     });
   });
