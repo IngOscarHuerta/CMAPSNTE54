@@ -161,8 +161,8 @@ const sucursales = [
 ];
 
 // ========= Íconos (sm) =========
-const icon = (name: string, extraClass = "") => {
-  const base = `class="size-4 ${extraClass}" fill="currentColor"`;
+const icon = (name: string, extraClass = "", size = 4) => {
+  const base = `class="w-${size} h-${size} ${extraClass}" fill="currentColor"`;
   switch (name) {
     case "location":
       return `<svg ${base} viewBox="0 0 20 20"><path fill-rule="evenodd" d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 1 0 3 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 0 0 2.273 1.765 11.842 11.842 0 0 0 .976.544l.062.029.018.008.006.003ZM10 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z" clip-rule="evenodd"/></svg>`;
@@ -195,19 +195,62 @@ const icon = (name: string, extraClass = "") => {
 
       <div class="grid md:grid-cols-2 gap-6">
         {
-          oficinaPrincipal.detalles.map((d) => (
-            <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-              <div class="flex items-center">
-                <span set:html={icon(d.icon, "text-white mr-2")} />
+          oficinaPrincipal.detalles.map((d) => {
+            // === HREF según tipo ===
+            let href = null;
+            if (d.icon === "location") {
+              const q = encodeURIComponent(
+                `${d.texto.replace(/\n/g, " ")} ${oficinaPrincipal.ubicacion}`,
+              );
+              href = `https://www.google.com/maps/search/?api=1&query=${q}`;
+            } else if (d.icon === "phone") {
+              const tel = (d.texto || "").replace(/[^0-9+]/g, "");
+              href = tel ? `tel:${tel}` : null;
+            } else if (d.icon === "mail") {
+              const email = (d.texto || "").trim();
+              href = email ? `mailto:${email}` : null;
+            }
+
+            const classes =
+              "rounded-lg p-4 backdrop-blur-sm " +
+              (href
+                ? "bg-white/10 hover:bg-white/15 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/70"
+                : "bg-white/10");
+
+            const inner = (
+              <div class="flex items-start">
                 <div>
-                  <h3 class="font-bold mb-0.5">{d.titulo}</h3>
-                  <p class="whitespace-pre-line text-white/90 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span
+                      aria-hidden="true"
+                      set:html={icon(d.icon, "text-white", 6)}
+                      class="shrink-0"
+                    />
+                    <h3 class="font-bold mb-0.5">{d.titulo}</h3>
+                  </div>
+                  <p class="whitespace-pre-line text-white/90 text-sm mt-0.5">
                     {d.texto}
                   </p>
                 </div>
               </div>
-            </div>
-          ))
+            );
+
+            return href ? (
+              <a
+                class={classes}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener" : undefined}
+                aria-label={d.titulo}
+              >
+                {inner}
+              </a>
+            ) : (
+              <div class={classes} aria-label={d.titulo}>
+                {inner}
+              </div>
+            );
+          })
         }
       </div>
     </section>
