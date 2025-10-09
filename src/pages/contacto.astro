@@ -7,144 +7,285 @@ const oficinaPrincipal = {
   titulo: "Oficina Principal",
   ubicacion: "Hermosillo, Sonora. México",
   detalles: [
-    { icon: "location", titulo: "Dirección", texto: "Obregón 62 Col. Centro\nHermosillo Sonora, México\nC.P. 83000" },
-    { icon: "phone",    titulo: "Teléfono",  texto: "(662) 259 9900" },
-    { icon: "mail",     titulo: "Correo",    texto: "contacto@cmapsnte54.com.mx" },
-    { icon: "time",     titulo: "Horario",   texto: "Lunes a Viernes: 8am - 4pm" },
+    {
+      icon: "location",
+      titulo: "Dirección",
+      texto: "Obregón 62 Col. Centro\nHermosillo Sonora, México\nC.P. 83000",
+    },
+    { icon: "phone", titulo: "Teléfono", texto: "(662) 259 9900" },
+    { icon: "mail", titulo: "Correo", texto: "contacto@cmapsnte54.com.mx" },
+    { icon: "time", titulo: "Horario", texto: "Lunes a Viernes: 8am - 4pm" },
   ],
 };
 
 const sucursales = [
-  { ciudad: "AGUA PRIETA", direccion: "Calle 7 entre 8 y 9 S/N Col. Centro", telefono: "(633) 338 48 84" },
-  { ciudad: "ÁLAMOS", direccion: "Carlos A. Rivero S/N Int. Centro de Maestros Col. Los Guayparines", telefono: "(647) 428 09 50", horario: "L-V: 8am – 2pm" },
-  { ciudad: "ALTAR", direccion: "Francisco I. Madero #7 entre Félix Gómez y Morelos Col. Centro", telefono: "(637) 374 06 99", horario: "L-V: 8am – 1pm" },
-  { ciudad: "CABORCA", direccion: "Calle 11 #152 entre avenida L y M Col. Centro", telefono: "(637) 372 19 27", horario: "L-V: 8am – 3pm" },
-  { ciudad: "CANANEA", direccion: "Av. Juárez y 5ta oeste S/N. Col. Centro", telefono: "(645) 332 06 78", horario: "L-V: 8am – 3pm" },
-  { ciudad: "CASA DE DÍA MAGISTERIAL", direccion: "Av. Saturnino Campoy y calle Del Maestro S/N. Col. Magisterial", telefono: "(662) 212 36 80", horario: "L-V: 8am – 3pm" },
-  { ciudad: "GUAYMAS", direccion: "Calle 20 Y Av. 10 #200 Col. Centro", telefono: "(622) 222 98 96", horario: "L-V: 8am – 3pm" },
-  { ciudad: "HUATABAMPO", direccion: "Calle Profesor Germán Ibarra Ibarra S/N entre Ávila Camacho y Obregón Col. Centro", telefono: "(647) 426 33 40", horario: "L-V: 8am – 3pm" },
-  { ciudad: "HUÉPAC", direccion: "Calle Hidalgo #10 Int. Esc. Primaria 10 de Mayo Col. Centro", telefono: "(623) 231 51 46", horario: "L-V: 8am – 2pm" },
-  { ciudad: "HUÁSABAS", direccion: "República de Chile y Profesor Julián Moreno S/N Col. Centro", telefono: "(634) 343 55 33", horario: "L-V: 8am – 2pm" },
-  { ciudad: "MAGDALENA", direccion: "Av. Benito Juárez #311 Col. Centro", telefono: "(632) 322 80 55", horario: "L-V: 8am – 3pm" },
-  { ciudad: "MOCTEZUMA", direccion: "Calle Rito esq. Ave. Miguel Alemán S/N Col. Centro", telefono: "(634) 243 04 58", horario: "L-V: 8am – 2pm" },
-  { ciudad: "NACOZARI", direccion: "Calle del Seguro Social S/N Esc. Jesús García #1", telefono: "(634) 342 03 78", horario: "L-V: 8am – 1pm" },
-  { ciudad: "NAVOJOA", direccion: "Blvd. Julio Martínez Bracamonte y Ceisd #27 Fracc. Acarandas", telefono: "(642) 421 53 51", horario: "L-V: 8am – 3pm" },
-  { ciudad: "NOGALES", direccion: "Calle Chimeneas #340 y Lago de Moreno Col. Las Praderas", telefono: "(631) 312 93 70", horario: "L-V: 8am – 3pm" },
-  { ciudad: "OBREGÓN", direccion: "Blvd. Casa Blanca #2701 Col. Casa Blanca", telefono: "(644) 431 20 89", horario: "L-V: 8am – 3pm" },
-  { ciudad: "PUERTO PEÑASCO", direccion: "Av. Simón Morua y San Luis Esc. Primaria Lázaro Cárdenas Col. Centro", telefono: "(638) 383 57 87", horario: "L-V: 8am – 2pm" },
-  { ciudad: "SAHUARIPA", direccion: "Av. Rafael V. Meneses Esq. Morelos #20 Col. Centro", telefono: "(634) 343 03 58" },
-  { ciudad: "SAN LUIS RIO COLORADO", direccion: "Av. Carranza y Calle 18 #1801 Col. Residencias", telefono: "(653) 534 54 93" },
-  { ciudad: "SANTA ANA", direccion: "Calle Serna y Agustín Rodríguez #201 Col. La Granja", telefono: "(641) 324 32 47", horario: "L-V: 8am – 3pm" },
-  { ciudad: "SONOYTA", direccion: "Calle Reforma y Jesús García #15 Col. Centro", telefono: "(651) 512 02 19" },
-  { ciudad: "URES", direccion: "Calle Jesús García Morales #26 Entre Álvaro Obregón y Enrique Quijada Col. Centro", telefono: "(623) 232 02 08", horario: "L-V: 8am – 1pm" },
-  { ciudad: "VILLA JUÁREZ", direccion: "Calle Gregorio Torres y 16 de Septiembre S/N. Int. Secundaria Estatal #28 Col. Centro", telefono: "(647) 482 04 28", horario: "L-V: 8am – 2pm" },
+  {
+    ciudad: "AGUA PRIETA",
+    direccion: "Calle 7 entre 8 y 9 S/N Col. Centro",
+    telefono: "(633) 338 48 84",
+  },
+  {
+    ciudad: "ÁLAMOS",
+    direccion:
+      "Carlos A. Rivero S/N Int. Centro de Maestros Col. Los Guayparines",
+    telefono: "(647) 428 09 50",
+    horario: "L-V: 8am – 2pm",
+  },
+  {
+    ciudad: "ALTAR",
+    direccion: "Francisco I. Madero #7 entre Félix Gómez y Morelos Col. Centro",
+    telefono: "(637) 374 06 99",
+    horario: "L-V: 8am – 1pm",
+  },
+  {
+    ciudad: "CABORCA",
+    direccion: "Calle 11 #152 entre avenida L y M Col. Centro",
+    telefono: "(637) 372 19 27",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "CANANEA",
+    direccion: "Av. Juárez y 5ta oeste S/N. Col. Centro",
+    telefono: "(645) 332 06 78",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "CASA DE DÍA MAGISTERIAL",
+    direccion: "Av. Saturnino Campoy y calle Del Maestro S/N. Col. Magisterial",
+    telefono: "(662) 212 36 80",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "GUAYMAS",
+    direccion: "Calle 20 Y Av. 10 #200 Col. Centro",
+    telefono: "(622) 222 98 96",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "HUATABAMPO",
+    direccion:
+      "Calle Profesor Germán Ibarra Ibarra S/N entre Ávila Camacho y Obregón Col. Centro",
+    telefono: "(647) 426 33 40",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "HUÉPAC",
+    direccion: "Calle Hidalgo #10 Int. Esc. Primaria 10 de Mayo Col. Centro",
+    telefono: "(623) 231 51 46",
+    horario: "L-V: 8am – 2pm",
+  },
+  {
+    ciudad: "HUÁSABAS",
+    direccion: "República de Chile y Profesor Julián Moreno S/N Col. Centro",
+    telefono: "(634) 343 55 33",
+    horario: "L-V: 8am – 2pm",
+  },
+  {
+    ciudad: "MAGDALENA",
+    direccion: "Av. Benito Juárez #311 Col. Centro",
+    telefono: "(632) 322 80 55",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "MOCTEZUMA",
+    direccion: "Calle Rito esq. Ave. Miguel Alemán S/N Col. Centro",
+    telefono: "(634) 243 04 58",
+    horario: "L-V: 8am – 2pm",
+  },
+  {
+    ciudad: "NACOZARI",
+    direccion: "Calle del Seguro Social S/N Esc. Jesús García #1",
+    telefono: "(634) 342 03 78",
+    horario: "L-V: 8am – 1pm",
+  },
+  {
+    ciudad: "NAVOJOA",
+    direccion: "Blvd. Julio Martínez Bracamonte y Ceisd #27 Fracc. Acarandas",
+    telefono: "(642) 421 53 51",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "NOGALES",
+    direccion: "Calle Chimeneas #340 y Lago de Moreno Col. Las Praderas",
+    telefono: "(631) 312 93 70",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "OBREGÓN",
+    direccion: "Blvd. Casa Blanca #2701 Col. Casa Blanca",
+    telefono: "(644) 431 20 89",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "PUERTO PEÑASCO",
+    direccion:
+      "Av. Simón Morua y San Luis Esc. Primaria Lázaro Cárdenas Col. Centro",
+    telefono: "(638) 383 57 87",
+    horario: "L-V: 8am – 2pm",
+  },
+  {
+    ciudad: "SAHUARIPA",
+    direccion: "Av. Rafael V. Meneses Esq. Morelos #20 Col. Centro",
+    telefono: "(634) 343 03 58",
+  },
+  {
+    ciudad: "SAN LUIS RIO COLORADO",
+    direccion: "Av. Carranza y Calle 18 #1801 Col. Residencias",
+    telefono: "(653) 534 54 93",
+  },
+  {
+    ciudad: "SANTA ANA",
+    direccion: "Calle Serna y Agustín Rodríguez #201 Col. La Granja",
+    telefono: "(641) 324 32 47",
+    horario: "L-V: 8am – 3pm",
+  },
+  {
+    ciudad: "SONOYTA",
+    direccion: "Calle Reforma y Jesús García #15 Col. Centro",
+    telefono: "(651) 512 02 19",
+  },
+  {
+    ciudad: "URES",
+    direccion:
+      "Calle Jesús García Morales #26 Entre Álvaro Obregón y Enrique Quijada Col. Centro",
+    telefono: "(623) 232 02 08",
+    horario: "L-V: 8am – 1pm",
+  },
+  {
+    ciudad: "VILLA JUÁREZ",
+    direccion:
+      "Calle Gregorio Torres y 16 de Septiembre S/N. Int. Secundaria Estatal #28 Col. Centro",
+    telefono: "(647) 482 04 28",
+    horario: "L-V: 8am – 2pm",
+  },
 ];
-
 
 // ========= Íconos (sm) =========
 const icon = (name: string, extraClass = "") => {
   const base = `class="size-4 ${extraClass}" fill="currentColor"`;
   switch (name) {
-    case "location": return `<svg ${base} viewBox="0 0 20 20"><path fill-rule="evenodd" d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 1 0 3 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 0 0 2.273 1.765 11.842 11.842 0 0 0 .976.544l.062.029.018.008.006.003ZM10 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z" clip-rule="evenodd"/></svg>`;
-    case "phone":    return `<svg ${base} viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/></svg>`;
-    case "time":     return `<svg ${base} viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clip-rule="evenodd"/></svg>`;
-    case "mail":     return `<svg ${base} viewBox="0 0 24 24"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>`;
-    default:         return "";
+    case "location":
+      return `<svg ${base} viewBox="0 0 20 20"><path fill-rule="evenodd" d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 1 0 3 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 0 0 2.273 1.765 11.842 11.842 0 0 0 .976.544l.062.029.018.008.006.003ZM10 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z" clip-rule="evenodd"/></svg>`;
+    case "phone":
+      return `<svg ${base} viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/></svg>`;
+    case "time":
+      return `<svg ${base} viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clip-rule="evenodd"/></svg>`;
+    case "mail":
+      return `<svg ${base} viewBox="0 0 24 24"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>`;
+    default:
+      return "";
   }
 };
 ---
 
 <BaseLayout title="Contacto">
   <div class="container mx-auto px-4 py-12 max-w-7xl">
-    <!-- ===== Header ===== -->
     <header class="text-center mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">¿En qué podemos ayudarte?</h1>
-      <p class="text-xl text-gray-600">Estamos a tus órdenes en las siguientes oficinas</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        ¿En qué podemos ayudarte?
+      </h1>
+      <p class="text-xl text-gray-600">
+        Estamos a tus órdenes en las siguientes oficinas
+      </p>
     </header>
 
-    <!-- ===== Oficina Principal (color original del proyecto) ===== -->
     <section class="rounded-xl shadow-lg p-8 mb-12 text-white bg-cmap-verde">
       <h2 class="text-3xl font-bold mb-1">{oficinaPrincipal.titulo}</h2>
       <p class="text-white/85 mb-6">{oficinaPrincipal.ubicacion}</p>
 
       <div class="grid md:grid-cols-2 gap-6">
-        {oficinaPrincipal.detalles.map((d) => (
-          <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-            <div class="flex items-center">
-              <span set:html={icon(d.icon, 'text-white mr-2')} />
-              <div>
-                <h3 class="font-bold mb-0.5">{d.titulo}</h3>
-                <p class="whitespace-pre-line text-white/90 text-sm">{d.texto}</p>
+        {
+          oficinaPrincipal.detalles.map((d) => (
+            <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+              <div class="flex items-center">
+                <span set:html={icon(d.icon, "text-white mr-2")} />
+                <div>
+                  <h3 class="font-bold mb-0.5">{d.titulo}</h3>
+                  <p class="whitespace-pre-line text-white/90 text-sm">
+                    {d.texto}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </section>
 
-    <!-- ===== Sucursales ===== -->
     <section>
       <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-2">Nuestras Sucursales</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">
+          Nuestras Sucursales
+        </h2>
         <p class="text-gray-600">Presencia en todo el estado de Sonora</p>
       </div>
 
-      <div id="grid-sucursales" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sucursales.map((s) => {
-          const tieneDireccion = !!(s.direccion && s.direccion.trim());
-          const tieneTelefono  = !!(s.telefono && s.telefono.trim());
-          const tieneHorario   = !!(s.horario && s.horario.trim());
-          return (
-            <div
-              class="card-sucursal group relative bg-white rounded-2xl p-0 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[color:var(--color-cmap-verde-600)] h-full cursor-pointer"
-              data-ciudad={s.ciudad}
-              data-direccion={s.direccion || ""}
-              data-telefono={s.telefono || ""}
-            >
-              {/* WRAPPER PARA EL GIRO */}
-              <div class="card-kin rounded-2xl p-6">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">{s.ciudad}</h3>
+      <div
+        id="grid-sucursales"
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        {
+          sucursales.map((s) => {
+            const tieneDireccion = !!(s.direccion && s.direccion.trim());
+            const tieneTelefono = !!(s.telefono && s.telefono.trim());
+            const tieneHorario = !!(s.horario && s.horario.trim());
+            return (
+              <div
+                class="card-sucursal group relative bg-white rounded-2xl p-0 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[color:var(--color-cmap-verde-600)] h-full cursor-pointer"
+                data-ciudad={s.ciudad}
+                data-direccion={s.direccion || ""}
+                data-telefono={s.telefono || ""}
+              >
+                <div class="card-kin rounded-2xl p-6">
+                  <div class="card-content">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                      {s.ciudad}
+                    </h3>
 
-                <div class="space-y-3 mb-2">
-                  {tieneDireccion && (
-                    <div class="flex items-center gap-3">
-                      <div class="w-8 h-8 rounded-full bg-cmap-naranja flex items-center justify-center flex-shrink-0">
-                        <span set:html={icon('location','text-white')} />
-                      </div>
-                      <p class="text-sm text-gray-700">{s.direccion}</p>
-                    </div>
-                  )}
+                    <div class="space-y-3 mb-2">
+                      {tieneDireccion && (
+                        <div class="flex items-center gap-3">
+                          <div class="w-8 h-8 rounded-full bg-cmap-naranja flex items-center justify-center flex-shrink-0">
+                            <span set:html={icon("location", "text-white")} />
+                          </div>
+                          <p class="text-sm text-gray-700">{s.direccion}</p>
+                        </div>
+                      )}
 
-                  {tieneTelefono && (
-                    <div class="flex items-center gap-3">
-                      <div class="w-8 h-8 rounded-full bg-[color:var(--color-cmap-verde-600)] flex items-center justify-center flex-shrink-0">
-                        <span set:html={icon('phone','text-white')} />
-                      </div>
-                      <p class="text-sm text-gray-700">{s.telefono}</p>
-                    </div>
-                  )}
+                      {tieneTelefono && (
+                        <div class="flex items-center gap-3">
+                          <div class="w-8 h-8 rounded-full bg-[color:var(--color-cmap-verde-600)] flex items-center justify-center flex-shrink-0">
+                            <span set:html={icon("phone", "text-white")} />
+                          </div>
+                          <p class="text-sm text-gray-700">{s.telefono}</p>
+                        </div>
+                      )}
 
-                  {tieneHorario && (
-                    <div class="flex items-center gap-3">
-                      <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
-                        <span set:html={icon('time','text-white')} />
-                      </div>
-                      <p class="text-sm text-gray-700">{s.horario}</p>
+                      {tieneHorario && (
+                        <div class="flex items-center gap-3">
+                          <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
+                            <span set:html={icon("time", "text-white")} />
+                          </div>
+                          <p class="text-sm text-gray-700">{s.horario}</p>
+                        </div>
+                      )}
                     </div>
-                  )}
+                  </div>
                 </div>
+                {/* /WRAPPER */}
               </div>
-              {/* /WRAPPER */}
-            </div>
-          );
-        })}
+            );
+          })
+        }
       </div>
     </section>
   </div>
 
-  <!-- ===== Overlay con perspectiva y pop-up ===== -->
-  <div id="detalle-overlay" class="fixed inset-0 z-[80] hidden flex items-center justify-center backdrop-blur-sm perspective-3d">
-    <!-- Nota: color de fondo del overlay lo controla JS -->
+  <!-- Overlay / Modal -->
+  <div
+    id="detalle-overlay"
+    class="fixed inset-0 z-[80] hidden flex items-center justify-center backdrop-blur-sm perspective-3d"
+  >
     <div
       id="detalle-modal"
       class="w-full max-w-md mx-4 bg-white rounded-2xl shadow-2xl p-6 opacity-0 preserve-3d backface-hidden"
@@ -153,19 +294,39 @@ const icon = (name: string, extraClass = "") => {
       <div class="flex items-start justify-between mb-4">
         <div>
           <h3 id="detalle-ciudad" class="text-2xl font-bold text-gray-900"></h3>
-          <p id="detalle-direccion" class="text-sm text-gray-600 whitespace-pre-line"></p>
+          <p
+            id="detalle-direccion"
+            class="text-sm text-gray-600 whitespace-pre-line"
+          >
+          </p>
         </div>
-        <button id="btn-cerrar" class="ml-4 text-gray-500 hover:text-gray-900" type="button" aria-label="Cerrar">✕</button>
+        <button
+          id="btn-cerrar"
+          class="cursor-pointer ml-4 text-gray-500 hover:text-gray-900"
+          type="button"
+          aria-label="Cerrar">✕</button
+        >
       </div>
 
       <div class="grid grid-cols-2 gap-3">
-        <a id="btn-marcar" href="#" class="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold text-white bg-[color:var(--color-cmap-verde-600)] hover:brightness-110 text-center">Marcar</a>
-        <a id="btn-mapa" href="#" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold text-gray-900 border border-gray-300 hover:bg-gray-50 text-center">Mapa</a>
+        <a
+          id="btn-marcar"
+          href="#"
+          class="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold text-white bg-[color:var(--color-cmap-verde-600)] hover:brightness-110 text-center"
+          >Marcar</a
+        >
+        <a
+          id="btn-mapa"
+          href="#"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold text-gray-900 border border-gray-300 hover:bg-gray-50 text-center"
+          >Mapa</a
+        >
       </div>
     </div>
   </div>
 
-  <!-- ===== Script: viaja al centro SIN encoger + flip solo wrapper ===== -->
   <script is:inline>
     const $ = (sel, el = document) => el.querySelector(sel);
     let activeCard = null;
@@ -181,50 +342,50 @@ const icon = (name: string, extraClass = "") => {
       overlay.style.backgroundColor = `rgba(0,0,0,${alpha})`;
     };
 
-    // Paso 1: look modal + ligero tilt en wrapper (SIN scale del card)
+    // Paso 1: look modal + ligero tilt (SIN scale del card)
     function phase1(card, done) {
-      // Solo estilos visuales y tilt
       card.classList.add("card-phase1");
-      card.querySelector(".card-kin")?.classList.add("kin-tilt");
-
-      // Al no cambiar transform aquí, no hay 'transitionend' de transform.
-      // Usamos doble RAF para asegurar reflow y continuidad fluida.
+      const kin = card.querySelector(".card-kin");
+      kin?.classList.add("kin-tilt");
+      kin?.querySelector(".card-content")?.classList.add("content-tilt");
       requestAnimationFrame(() => requestAnimationFrame(() => done(1)));
     }
 
-    // Paso 2: mover al centro (solo translate; sin scale)
+    // Paso 2: mover al centro (solo translate)
     function phase2(card, done) {
       const rect = card.getBoundingClientRect();
-      const targetLeft = Math.round((innerWidth  - rect.width)  / 2);
-      const targetTop  = Math.round((innerHeight - rect.height) / 2);
+      const targetLeft = Math.round((innerWidth - rect.width) / 2);
+      const targetTop = Math.round((innerHeight - rect.height) / 2);
       const tx = targetLeft - Math.round(rect.left);
-      const ty = targetTop  - Math.round(rect.top);
+      const ty = targetTop - Math.round(rect.top);
 
       card.style.setProperty("--tx", `${tx}px`);
       card.style.setProperty("--ty", `${ty}px`);
       card.classList.add("card-phase2");
 
-      card.addEventListener("transitionend", function onEnd(e){
+      card.addEventListener("transitionend", function onEnd(e) {
         if (e.propertyName !== "transform") return;
         card.removeEventListener("transitionend", onEnd);
         done();
       });
     }
 
-    // Flip-swap: el giro final se hace SOLO en el wrapper (.card-kin)
+    // Apertura: flip-swap
     function flipSwap(card, modal, overlay) {
       const wrapper = card.querySelector(".card-kin");
-      if (!wrapper) return;
+      const content = card.querySelector(".card-content");
+      if (!wrapper || !content) return;
 
       wrapper.classList.add("kin-flip-out");
-      wrapper.addEventListener("transitionend", function onEnd(e){
+      content.classList.add("content-flip-out");
+
+      wrapper.addEventListener("transitionend", function onEnd(e) {
         if (e.propertyName !== "transform") return;
         wrapper.removeEventListener("transitionend", onEnd);
 
-        // Oculta el card y alista el modal para continuar el giro
+        // Oculta el card y alista el modal
         card.style.visibility = "hidden";
 
-        // Igualar tamaño visual del modal al ancho actual del card (sin scaling en el viaje)
         const rect = card.getBoundingClientRect();
         const targetW = Math.min(520, innerWidth - 32);
         const scaleStart = rect.width / targetW;
@@ -233,7 +394,7 @@ const icon = (name: string, extraClass = "") => {
         modal.style.opacity = "1";
         modal.style.transformOrigin = "center center";
         modal.style.transform = `scale(${scaleStart}) rotateY(-90deg)`;
-        modal.getBoundingClientRect(); // reflow
+        modal.getBoundingClientRect();
 
         modal.style.transition = "transform 360ms cubic-bezier(.2,.7,.2,1)";
         modal.style.transform = `scale(${Math.max(1, scaleStart)}) rotateY(4deg)`;
@@ -246,41 +407,104 @@ const icon = (name: string, extraClass = "") => {
       });
     }
 
-    function resetCard(card) {
-      const wrapper = card?.querySelector(".card-kin");
-      card?.classList.remove("card-phase1","card-phase2");
-      wrapper?.classList.remove("kin-tilt","kin-flip-out");
-      card?.style.removeProperty("--tx");
-      card?.style.removeProperty("--ty");
-      if (card) card.style.visibility = "";
+    // ===== Cierre inverso mejorado =====
+    function animateCloseReverse(card, modal, overlay) {
+      // 1) Girar modal a -90°, pero mantener overlay oscuro (NO ocultar aún)
+      modal.style.transition =
+        "transform 240ms cubic-bezier(.2,.7,.2,1), opacity 180ms ease";
+      modal.style.transform = "scale(1) rotateY(-90deg)";
+      modal.style.opacity = "0";
+
+      const onModalEnd = (e) => {
+        if (e.propertyName !== "transform") return;
+        modal.removeEventListener("transitionend", onModalEnd);
+
+        // No ocultamos overlay todavía; permanece con fondo oscuro hasta el final
+        modal.style.transition = "none";
+        modal.style.transform = "rotateY(-90deg)";
+        // Mostrar el card nuevamente
+        if (!card) return;
+        card.style.visibility = "";
+
+        const wrapper = card.querySelector(".card-kin");
+        const content = card.querySelector(".card-content");
+        if (!wrapper || !content) return;
+
+        // 2) Flip back: 90° -> 12° (quitamos clases de flip, conservamos tilt)
+        const onFlipBackEnd = (ev) => {
+          if (ev.propertyName !== "transform") return;
+          wrapper.removeEventListener("transitionend", onFlipBackEnd);
+
+          // 3) Viaje de regreso: quitar translate (card-phase2)
+          const onTravelBackEnd = (ev2) => {
+            if (ev2.propertyName !== "transform") return;
+            card.removeEventListener("transitionend", onTravelBackEnd);
+
+            // 4) Quitar tilt y sombras finales (remover phase1)
+            wrapper.classList.remove("kin-tilt");
+            content.classList.remove("content-tilt");
+
+            // 5) Desvanecer overlay AHORA y ocultarlo al terminar
+            fadeOverlayTo(overlay, 0, 220);
+            setTimeout(() => {
+              overlay.classList.add("hidden");
+              // Reset modal a estado base
+              modal.style.opacity = "0";
+              modal.style.transform = "rotateY(-90deg)";
+              // Limpieza de variables y clases en card
+              card.classList.remove("card-phase1");
+              card.style.removeProperty("--tx");
+              card.style.removeProperty("--ty");
+              activeCard = null;
+            }, 230);
+          };
+
+          card.addEventListener("transitionend", onTravelBackEnd, {
+            once: true,
+          });
+          // Remover card-phase2 → regresa a su lugar
+          card.classList.remove("card-phase2");
+        };
+
+        wrapper.addEventListener("transitionend", onFlipBackEnd, {
+          once: true,
+        });
+        // Quitar flip-out para regresar a 12° (contenido también regresa)
+        wrapper.classList.remove("kin-flip-out");
+        content.classList.remove("content-flip-out");
+        // content-tilt permanece hasta el paso 4 para mantener legible el contenido
+      };
+
+      modal.addEventListener("transitionend", onModalEnd);
     }
 
     function setupSucursalModal() {
       const overlay = $("#detalle-overlay");
-      const modal   = $("#detalle-modal");
+      const modal = $("#detalle-modal");
       const btnCerrar = $("#btn-cerrar");
       const btnMarcar = $("#btn-marcar");
-      const btnMapa   = $("#btn-mapa");
+      const btnMapa = $("#btn-mapa");
       const lblCiudad = $("#detalle-ciudad");
-      const lblDir    = $("#detalle-direccion");
-      const grid      = $("#grid-sucursales");
+      const lblDir = $("#detalle-direccion");
+      const grid = $("#grid-sucursales");
       if (!overlay || !modal || !grid) return;
 
       const closeModal = () => {
-        modal.style.transition = "opacity 180ms ease, transform 180ms ease";
-        modal.style.opacity = "0";
-        modal.style.transform = "scale(0.98) rotateY(0deg)";
-        fadeOverlayTo(overlay, 0, 180);
-        setTimeout(() => {
-          overlay.classList.add("hidden");
-          modal.style.transition = "none";
+        if (activeCard) {
+          animateCloseReverse(activeCard, modal, overlay);
+        } else {
+          // Fallback simple
+          modal.style.transition = "opacity 180ms ease, transform 180ms ease";
           modal.style.opacity = "0";
-          modal.style.transform = "rotateY(-90deg)";
-          if (activeCard) {
-            resetCard(activeCard);
-            activeCard = null;
-          }
-        }, 220);
+          modal.style.transform = "scale(0.98) rotateY(0deg)";
+          fadeOverlayTo(overlay, 0, 180);
+          setTimeout(() => {
+            overlay.classList.add("hidden");
+            modal.style.transition = "none";
+            modal.style.opacity = "0";
+            modal.style.transform = "rotateY(-90deg)";
+          }, 200);
+        }
       };
 
       if (grid.dataset.bound !== "1") {
@@ -289,33 +513,35 @@ const icon = (name: string, extraClass = "") => {
           if (!card || activeCard) return;
           activeCard = card;
 
-          const ciudad    = card.getAttribute("data-ciudad") || "";
+          const ciudad = card.getAttribute("data-ciudad") || "";
           const direccion = card.getAttribute("data-direccion") || "";
-          const telefono  = card.getAttribute("data-telefono") || "";
+          const telefono = card.getAttribute("data-telefono") || "";
           lblCiudad.textContent = ciudad;
-          lblDir.textContent    = direccion || "";
+          lblDir.textContent = direccion || "";
 
           if (telefono) {
             const telSan = telefono.replace(/[^0-9+]/g, "");
             btnMarcar.href = `tel:${telSan}`;
-            btnMarcar.classList.remove("pointer-events-none","opacity-50");
+            btnMarcar.classList.remove("pointer-events-none", "opacity-50");
           } else {
             btnMarcar.href = "#";
-            btnMarcar.classList.add("pointer-events-none","opacity-50");
+            btnMarcar.classList.add("pointer-events-none", "opacity-50");
           }
           if (direccion) {
-            const q = encodeURIComponent(`${direccion} ${ciudad} Sonora, México`);
+            const q = encodeURIComponent(
+              `${direccion} ${ciudad} Sonora, México`,
+            );
             btnMapa.href = `https://www.google.com/maps/search/?api=1&query=${q}`;
-            btnMapa.classList.remove("pointer-events-none","opacity-50");
+            btnMapa.classList.remove("pointer-events-none", "opacity-50");
           } else {
             btnMapa.href = "#";
-            btnMapa.classList.add("pointer-events-none","opacity-50");
+            btnMapa.classList.add("pointer-events-none", "opacity-50");
           }
 
           showOverlay(overlay);
           fadeOverlayTo(overlay, 0.45, 400);
 
-          // Secuencia: Phase1 (sin scale) → Phase2 (centrar) → FlipSwap (giro solo wrapper)
+          // Apertura: Phase1 → Phase2 → FlipSwap
           phase1(card, () => {
             phase2(card, () => {
               flipSwap(card, modal, overlay);
@@ -326,68 +552,95 @@ const icon = (name: string, extraClass = "") => {
       }
 
       btnCerrar?.addEventListener("click", closeModal);
-      overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !overlay.classList.contains("hidden")) closeModal(); });
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !overlay.classList.contains("hidden"))
+          closeModal();
+      });
     }
 
     document.addEventListener("astro:page-load", setupSucursalModal);
-    if (document.readyState === "complete" || document.readyState === "interactive") setupSucursalModal();
+    if (
+      document.readyState === "complete" ||
+      document.readyState === "interactive"
+    )
+      setupSucursalModal();
     else document.addEventListener("DOMContentLoaded", setupSucursalModal);
   </script>
 
-  <!-- ===== Estilos: contenedor vs wrapper (sin “encogimiento”) ===== -->
   <style is:global>
-    .perspective-3d { perspective: 1000px; }
-    .preserve-3d { transform-style: preserve-3d; }
-    .backface-hidden { backface-visibility: hidden; }
+    .perspective-3d {
+      perspective: 1000px;
+    }
+    .preserve-3d {
+      transform-style: preserve-3d;
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+    }
 
-    /* El contenedor del card maneja SOLO translate (no scale) para centrar */
     .card-sucursal {
-      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease;
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        background-color 0.18s ease;
       will-change: transform;
       transform-origin: top left;
       backface-visibility: hidden;
     }
-
-    /* El wrapper interno maneja el giro con origen CENTER */
     .card-kin {
       transform-origin: center center;
       backface-visibility: hidden;
-      transition: transform .18s ease;
+      transition: transform 0.18s ease;
+    }
+    .card-content {
+      transition: transform 0.18s ease;
+      transform-origin: center center;
+      backface-visibility: hidden;
     }
 
-    /* Paso 1: look modal + sombras; SIN scale */
     .card-sucursal.card-phase1 {
-      /* sin transform aquí */
-      border-color: rgba(0,0,0,0.06);
+      border-color: rgba(0, 0, 0, 0.06);
       background-color: #fff;
-      box-shadow: 0 18px 42px rgba(0,0,0,.18);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
       z-index: 95;
       transition:
-        transform .35s cubic-bezier(.2,.7,.2,1),
-        box-shadow .25s ease, border-color .25s ease, background-color .25s ease;
+        transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease;
     }
     .card-kin.kin-tilt {
       transform: rotateY(12deg);
-      transition: transform .35s cubic-bezier(.2,.7,.2,1);
+      transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .card-kin.kin-tilt .card-content {
+      transform: rotateY(-12deg);
+      transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
     }
 
-    /* Paso 2: viaje al centro solo con translate (sin scale) */
     .card-sucursal.card-phase2 {
       transform: translate(var(--tx, 0), var(--ty, 0));
-      box-shadow: 0 20px 48px rgba(0,0,0,.22);
-      transition: transform .55s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
+      transition:
+        transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 0.35s ease;
     }
 
-    /* Flip final SOLO en el wrapper (no mueve el card) */
     .card-kin.kin-flip-out {
       transform: rotateY(90deg);
-      transition: transform .36s cubic-bezier(.2,.7,.2,1);
+      transition: transform 0.36s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .card-kin.kin-flip-out .card-content {
+      transform: rotateY(-90deg);
+      transition: transform 0.36s cubic-bezier(0.2, 0.7, 0.2, 1);
     }
 
-    /* Modal por defecto (transiciones se gestionan en JS para el elastic) */
     #detalle-overlay:not(.hidden) #detalle-modal {
-      transition: opacity .18s ease;
+      transition: opacity 0.18s ease;
     }
   </style>
 </BaseLayout>
