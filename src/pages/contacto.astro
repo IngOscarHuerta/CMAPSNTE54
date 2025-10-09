@@ -288,7 +288,7 @@ const icon = (name: string, extraClass = "", size = 4) => {
                     <div class="space-y-3 mb-2">
                       {tieneDireccion && (
                         <div class="flex items-center gap-3">
-                          <div class="w-8 h-8 rounded-full bg-cmap-naranja flex items-center justify-center flex-shrink-0">
+                          <div class="w-6 h-6 rounded-full bg-cmap-naranja flex items-center justify-center flex-shrink-0">
                             <span set:html={icon("location", "text-white")} />
                           </div>
                           <p class="text-sm text-gray-700">{s.direccion}</p>
@@ -297,7 +297,7 @@ const icon = (name: string, extraClass = "", size = 4) => {
 
                       {tieneTelefono && (
                         <div class="flex items-center gap-3">
-                          <div class="w-8 h-8 rounded-full bg-[color:var(--color-cmap-verde-600)] flex items-center justify-center flex-shrink-0">
+                          <div class="w-6 h-6 rounded-full bg-[color:var(--color-cmap-verde-600)] flex items-center justify-center flex-shrink-0">
                             <span set:html={icon("phone", "text-white")} />
                           </div>
                           <p class="text-sm text-gray-700">{s.telefono}</p>
@@ -306,7 +306,7 @@ const icon = (name: string, extraClass = "", size = 4) => {
 
                       {tieneHorario && (
                         <div class="flex items-center gap-3">
-                          <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
+                          <div class="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
                             <span set:html={icon("time", "text-white")} />
                           </div>
                           <p class="text-sm text-gray-700">{s.horario}</p>

@@ -1,4 +1,5 @@
 ---
+import HeroSection from "../components/HeroSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -6,24 +7,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- Fondo general sólido -->
   <div class="min-h-screen">
     <!-- Hero Section (sólido) -->
-    <section class="relative overflow-hidden bg-cmap-verde text-white">
-      <div class="relative max-w-7xl mx-auto px-4 py-20 md:py-32">
-        <div class="text-center max-w-4xl mx-auto">
-          <h1
-            transition:name="page-title"
-            class="text-4xl md:text-6xl font-black mb-6 leading-tight"
-          >
-            Caja Magisterial de<br />
-            <span class="text-[color:var(--color-cmap-amarillo-400)]"
-              >Ahorros y Préstamos</span
-            >
-          </h1>
-          <p class="text-xl text-white/80">
-            Gestiona tus finanzas de manera fácil, rápida y segura
-          </p>
-        </div>
-      </div>
-    </section>
+    <HeroSection />
+
 
     <!-- Apps Section -->
     <section class="py-20 px-4">

@@ -1,0 +1,375 @@
+---
+/* HeroSection:
+   - Panal pointy-top (60vh), modo 'random' con huecos opcionales
+   - Mapa de Sonora centrado (sombra suave)
+   - Texto centrado exacto con ANIMACIÓN lenta y efecto 3D destacado
+*/
+---
+
+<section class="relative isolate h-[60vh] overflow-hidden">
+    <!-- Fondo panal -->
+    <div id="honeycomb" class="absolute inset-0 z-0"></div>
+
+    <!-- Mapa SONORA + halo -->
+    <div
+        id="sonora-wrap"
+        class="absolute inset-0 z-10 pointer-events-none flex items-center justify-center"
+    >
+        <div class="sonora-halo" aria-hidden="true"></div>
+        <img
+            id="sonora"
+            class="sonora-img"
+            src="/sonora.svg"
+            alt="Mapa de Sonora"
+        />
+    </div>
+
+    <!-- Texto centrado exacto -->
+    <div id="hero-text" class="pointer-events-none">
+        <div class="hero-copy">
+            <div class="line line-a">CAJA</div>
+            <div class="line line-a">MAGISTERIAL</div>
+            <div class="line line-b">DE AHORROS Y PRÉSTAMOS</div>
+            <div class="line line-c">DE LA SECCIÓN 54 DEL SNTE</div>
+            <div class="line line-d">“PORQUE CUIDAMOS TU AHORROS”</div>
+        </div>
+    </div>
+</section>
+
+<style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap");
+
+    :root {
+        /* Panal */
+        --side: 56px;
+        --gap: 2px;
+        --bg-cream: #fff6e9;
+        --hex-accent: rgba(255, 190, 120, 0.35);
+        --hex-fill-base: rgba(255, 240, 220, 0.22);
+        --stroke: max(2px, calc(var(--side) * 0.06));
+        --hx-appear-dur: 0.44s;
+
+        /* Mapa */
+        --sonora-color: rgba(255, 190, 120, 0.55);
+        --map-enter-dur: 1.2s;
+        --map-enter-delay: 0.7s;
+
+        /* Texto */
+        --text-enter-dur: 1s;
+        --text-stagger: 0.25s;
+
+        /* Sombras */
+        --shadow-strong: rgba(0, 0, 0, 0.22);
+        --shadow-soft: rgba(0, 0, 0, 0.12);
+        --halo-color: rgba(0, 0, 0, 0.14);
+
+        /* Colores texto */
+        --hero-font: "Montserrat", "Segoe UI", Roboto, Arial, sans-serif;
+        --hero-orange: #f59e0b;
+        --hero-black: #111315;
+        --hero-green: #1c7a55;
+    }
+
+    section.relative {
+        background: var(--bg-cream);
+    }
+
+    /* ========== PANAL ========== */
+    #honeycomb {
+        pointer-events: auto;
+        z-index: 0;
+    }
+    .hex {
+        position: absolute;
+        width: calc(var(--side) * 1.7320508076);
+        height: calc(var(--side) * 2);
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%) scale(1);
+        background: var(--hex-accent);
+        clip-path: polygon(
+            50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0% 25%
+        );
+        opacity: 0;
+        pointer-events: auto;
+        z-index: 1;
+        transition:
+            transform 0.2s ease,
+            filter 0.2s ease;
+    }
+    .hex-core {
+        position: absolute;
+        inset: var(--stroke);
+        clip-path: inherit;
+        background: var(--hex-fill-base);
+        transition:
+            background-color 0.18s ease,
+            filter 0.18s ease;
+    }
+    .hex.show {
+        animation: hx-in var(--hx-appear-dur) cubic-bezier(0.2, 0.7, 0.2, 1)
+            both;
+    }
+    @keyframes hx-in {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.94);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+    .hex:hover .hex-core {
+        background: var(--hex-accent);
+    }
+    .hex:hover {
+        transform: translate(-50%, -50%) scale(1.03);
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.06));
+    }
+
+    /* ========== MAPA con sombra suave (no tan 3D) ========== */
+    #sonora-wrap {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sonora-halo {
+        position: absolute;
+        width: clamp(360px, 58vmin, 880px);
+        height: clamp(220px, 32vmin, 520px);
+        border-radius: 999px;
+        opacity: 0;
+        transform: translateY(28px);
+        background: radial-gradient(
+            60% 60% at 50% 60%,
+            var(--halo-color) 0%,
+            rgba(0, 0, 0, 0.08) 35%,
+            rgba(0, 0, 0, 0.03) 65%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        filter: blur(8px);
+        z-index: 0;
+    }
+    .sonora-img {
+        width: clamp(320px, 48vmin, 720px);
+        height: auto;
+        opacity: 0;
+        transform: translateY(28px);
+        color: var(--sonora-color);
+        /* sombra ligera */
+        filter: drop-shadow(0 10px 20px var(--shadow-soft))
+            drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+        z-index: 1;
+    }
+    .sonora-enter {
+        animation: sonora-in var(--map-enter-dur)
+            cubic-bezier(0.22, 0.55, 0.1, 1) var(--map-enter-delay) both;
+    }
+    @keyframes sonora-in {
+        from {
+            opacity: 0;
+            transform: translateY(28px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ========== TEXTO centrado exacto con efecto 3D fuerte ========== */
+    #hero-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 1100px;
+        z-index: 30;
+    }
+    .hero-copy {
+        font-family: var(--hero-font);
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .line {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: line-in var(--text-enter-dur)
+            cubic-bezier(0.22, 0.55, 0.1, 1) both;
+    }
+    .line:nth-child(1) {
+        animation-delay: calc(var(--map-enter-delay) + 0s);
+    }
+    .line:nth-child(2) {
+        animation-delay: calc(var(--map-enter-delay) + var(--text-stagger));
+    }
+    .line:nth-child(3) {
+        animation-delay: calc(var(--map-enter-delay) + var(--text-stagger) * 2);
+    }
+    .line:nth-child(4) {
+        animation-delay: calc(var(--map-enter-delay) + var(--text-stagger) * 3);
+    }
+    .line:nth-child(5) {
+        animation-delay: calc(var(--map-enter-delay) + var(--text-stagger) * 4);
+    }
+    @keyframes line-in {
+        from {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ---- Estilos visuales con sombra 3D ---- */
+    .line-a {
+        line-height: 0.9;
+        font-weight: 900;
+        font-size: clamp(34px, 7.5vmin, 88px);
+        color: var(--hero-orange);
+        text-shadow:
+            0 2px 0 rgba(0, 0, 0, 0.2),
+            0 4px 8px rgba(0, 0, 0, 0.25),
+            0 8px 20px rgba(0, 0, 0, 0.35),
+            inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    }
+    .line-b {
+        margin-top: 0.25rem;
+        line-height: 1.05;
+        font-weight: 900;
+        font-size: clamp(22px, 4.5vmin, 52px);
+        color: var(--hero-black);
+        text-shadow: none
+    }
+    .line-c {
+        margin-top: 0.25rem;
+        line-height: 1.1;
+        font-weight: 800;
+        font-size: clamp(12px, 2vmin, 18px);
+        color: var(--hero-black);
+        letter-spacing: 0.02em;
+        text-shadow: none;
+    }
+    .line-d {
+        margin-top: 0.6rem;
+        line-height: 1.15;
+        font-weight: 800;
+        font-size: clamp(14px, 2.3vmin, 22px);
+        color: var(--hero-green);
+        text-shadow:
+            0 2px 6px #00000059,
+            0 4px 12px rgba(0, 0, 0, 0.25),
+            inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    }
+</style>
+
+<script is:inline type="module">
+    const MODE = "random",
+        SKIP_PROB = 0.35,
+        round = (v) => Math.round(v);
+    let pending = [];
+    const clearPending = () => {
+        pending.forEach((id) => clearTimeout(id));
+        pending = [];
+    };
+    function buildGrid(container) {
+        if (!container) return;
+        clearPending();
+        container.innerHTML = "";
+        const cs = getComputedStyle(document.documentElement);
+        const s = parseFloat(cs.getPropertyValue("--side")) || 56;
+        const gap = parseFloat(cs.getPropertyValue("--gap")) || 0;
+        const stepX = Math.sqrt(3) * s + gap,
+            stepY = 1.5 * s + gap * 0.75;
+        const vw = container.clientWidth,
+            vh = container.clientHeight;
+        const cols = Math.ceil(vw / stepX) + 4,
+            rows = Math.ceil(vh / stepY) + 4;
+        const cx = vw / 2,
+            cy = vh / 2,
+            startX = -stepX,
+            startY = -stepY;
+        const nodes = [];
+        for (let r = 0; r < rows; r++) {
+            const offsetX = r % 2 === 1 ? stepX / 2 : 0;
+            for (let c = 0; c < cols; c++) {
+                const x = startX + offsetX + c * stepX,
+                    y = startY + r * stepY;
+                if (
+                    x < -stepX ||
+                    x > vw + stepX ||
+                    y < -stepY ||
+                    y > vh + stepY
+                )
+                    continue;
+                if (Math.random() < SKIP_PROB) continue;
+                const hex = document.createElement("div");
+                hex.className = "hex";
+                hex.style.left = round(x) + "px";
+                hex.style.top = round(y) + "px";
+                const core = document.createElement("div");
+                core.className = "hex-core";
+                hex.appendChild(core);
+                let delay = 0;
+                if (MODE === "random") {
+                    delay = Math.random() * 900;
+                } else if (MODE === "ripple") {
+                    const d = Math.hypot(x - cx, y - cy);
+                    delay = d * 0.28;
+                } else if (MODE === "sweep-x") {
+                    delay = (x + y * 0.2) * 0.35;
+                }
+                hex.style.animationDelay = Math.round(delay) + "ms";
+                container.appendChild(hex);
+                nodes.push(hex);
+            }
+        }
+        const id = setTimeout(
+            () => nodes.forEach((n) => n.classList.add("show")),
+            0,
+        );
+        pending.push(id);
+        const map = document.getElementById("sonora"),
+            halo = document.querySelector(".sonora-halo");
+        [map, halo].forEach((el) => {
+            if (!el) return;
+            el.classList.remove("sonora-enter");
+            void el.offsetWidth;
+            el.classList.add("sonora-enter");
+        });
+    }
+    function start() {
+        const container = document.getElementById("honeycomb");
+        if (!container) return;
+        buildGrid(container);
+        const ro = new ResizeObserver(() => buildGrid(container));
+        ro.observe(container);
+        const rebuild = () => buildGrid(container);
+        document.addEventListener("astro:page-load", rebuild);
+        document.addEventListener("astro:after-swap", rebuild);
+        window.addEventListener("pageshow", rebuild);
+        document.addEventListener("visibilitychange", () => {
+            if (!document.hidden) rebuild();
+        });
+        window.addEventListener("focus", rebuild);
+    }
+    if (
+        document.readyState === "complete" ||
+        document.readyState === "interactive"
+    )
+        start();
+    else document.addEventListener("DOMContentLoaded", start);
+    document.addEventListener("astro:page-load", start);
+    document.addEventListener("astro:after-swap", start);
+</script>
