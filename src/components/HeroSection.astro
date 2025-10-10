@@ -275,101 +275,107 @@
 </style>
 
 <script is:inline type="module">
-    const MODE = "random",
-        SKIP_PROB = 0.35,
-        round = (v) => Math.round(v);
-    let pending = [];
-    const clearPending = () => {
-        pending.forEach((id) => clearTimeout(id));
-        pending = [];
-    };
-    function buildGrid(container) {
-        if (!container) return;
-        clearPending();
-        container.innerHTML = "";
-        const cs = getComputedStyle(document.documentElement);
-        const s = parseFloat(cs.getPropertyValue("--side")) || 56;
-        const gap = parseFloat(cs.getPropertyValue("--gap")) || 0;
-        const stepX = Math.sqrt(3) * s + gap,
-            stepY = 1.5 * s + gap * 0.75;
-        const vw = container.clientWidth,
-            vh = container.clientHeight;
-        const cols = Math.ceil(vw / stepX) + 4,
-            rows = Math.ceil(vh / stepY) + 4;
-        const cx = vw / 2,
-            cy = vh / 2,
-            startX = -stepX,
-            startY = -stepY;
-        const nodes = [];
-        for (let r = 0; r < rows; r++) {
-            const offsetX = r % 2 === 1 ? stepX / 2 : 0;
-            for (let c = 0; c < cols; c++) {
-                const x = startX + offsetX + c * stepX,
-                    y = startY + r * stepY;
-                if (
-                    x < -stepX ||
-                    x > vw + stepX ||
-                    y < -stepY ||
-                    y > vh + stepY
-                )
-                    continue;
-                if (Math.random() < SKIP_PROB) continue;
-                const hex = document.createElement("div");
-                hex.className = "hex";
-                hex.style.left = round(x) + "px";
-                hex.style.top = round(y) + "px";
-                const core = document.createElement("div");
-                core.className = "hex-core";
-                hex.appendChild(core);
-                let delay = 0;
-                if (MODE === "random") {
-                    delay = Math.random() * 900;
-                } else if (MODE === "ripple") {
-                    const d = Math.hypot(x - cx, y - cy);
-                    delay = d * 0.28;
-                } else if (MODE === "sweep-x") {
-                    delay = (x + y * 0.2) * 0.35;
-                }
-                hex.style.animationDelay = Math.round(delay) + "ms";
-                container.appendChild(hex);
-                nodes.push(hex);
-            }
-        }
-        const id = setTimeout(
-            () => nodes.forEach((n) => n.classList.add("show")),
-            0,
-        );
-        pending.push(id);
-        const map = document.getElementById("sonora"),
-            halo = document.querySelector(".sonora-halo");
-        [map, halo].forEach((el) => {
-            if (!el) return;
-            el.classList.remove("sonora-enter");
-            void el.offsetWidth;
-            el.classList.add("sonora-enter");
-        });
+  // --- CONFIG ---
+  const MODE = "random";
+  const SKIP_PROB = 0.35;
+  const round = (v) => Math.round(v);
+
+  // Flag para no registrar listeners múltiples
+  let listenersBound = false;
+
+  // Construye el panal y lanza la animación de entrada (UNA SOLA VEZ por navegación)
+  function buildOnceWithAnimation() {
+    const container = document.getElementById("honeycomb");
+    if (!container) return;
+
+    // Limpia y genera hexágonos
+    container.innerHTML = "";
+    const cs = getComputedStyle(document.documentElement);
+    const s = parseFloat(cs.getPropertyValue("--side")) || 56;
+    const gap = parseFloat(cs.getPropertyValue("--gap")) || 0;
+    const stepX = Math.sqrt(3) * s + gap;
+    const stepY = 1.5 * s + gap * 0.75;
+
+    const vw = container.clientWidth;
+    const vh = container.clientHeight;
+
+    const cols = Math.ceil(vw / stepX) + 4;
+    const rows = Math.ceil(vh / stepY) + 4;
+
+    const cx = vw / 2;
+    const cy = vh / 2;
+    const startX = -stepX;
+    const startY = -stepY;
+
+    const nodes = [];
+    for (let r = 0; r < rows; r++) {
+      const offsetX = r % 2 === 1 ? stepX / 2 : 0;
+      for (let c = 0; c < cols; c++) {
+        const x = startX + offsetX + c * stepX;
+        const y = startY + r * stepY;
+        if (x < -stepX || x > vw + stepX || y < -stepY || y > vh + stepY) continue;
+        if (Math.random() < SKIP_PROB) continue;
+
+        const hex = document.createElement("div");
+        hex.className = "hex";
+        hex.style.left = round(x) + "px";
+        hex.style.top = round(y) + "px";
+
+        const core = document.createElement("div");
+        core.className = "hex-core";
+        hex.appendChild(core);
+
+        let delay = 0;
+        if (MODE === "random") delay = Math.random() * 900;
+        else if (MODE === "ripple") delay = Math.hypot(x - cx, y - cy) * 0.28;
+        else if (MODE === "sweep-x") delay = (x + y * 0.2) * 0.35;
+
+        hex.style.animationDelay = Math.round(delay) + "ms";
+        container.appendChild(hex);
+        nodes.push(hex);
+      }
     }
-    function start() {
-        const container = document.getElementById("honeycomb");
-        if (!container) return;
-        buildGrid(container);
-        const ro = new ResizeObserver(() => buildGrid(container));
-        ro.observe(container);
-        const rebuild = () => buildGrid(container);
-        document.addEventListener("astro:page-load", rebuild);
-        document.addEventListener("astro:after-swap", rebuild);
-        window.addEventListener("pageshow", rebuild);
-        document.addEventListener("visibilitychange", () => {
-            if (!document.hidden) rebuild();
-        });
-        window.addEventListener("focus", rebuild);
-    }
-    if (
-        document.readyState === "complete" ||
-        document.readyState === "interactive"
-    )
-        start();
-    else document.addEventListener("DOMContentLoaded", start);
-    document.addEventListener("astro:page-load", start);
-    document.addEventListener("astro:after-swap", start);
+
+    // Lanza aparición de hexágonos
+    requestAnimationFrame(() => nodes.forEach((n) => n.classList.add("show")));
+
+    // Re-lanza únicamente la animación de entrada del mapa y halo
+    const map = document.getElementById("sonora");
+    const halo = document.querySelector(".sonora-halo");
+    [map, halo].forEach((el) => {
+      if (!el) return;
+      el.classList.remove("sonora-enter");
+      // Fuerza reflow para reiniciar la animación CSS
+      void el.offsetWidth;
+      el.classList.add("sonora-enter");
+    });
+  }
+
+  // Ejecuta animación al cargar y al cambiar de página (view transitions de Astro)
+  function runEnterAnimations() {
+    buildOnceWithAnimation();
+  }
+
+  // Enlaza SOLO los eventos de navegación de Astro. Nada de focus/visibility/resize/pageshow.
+  function bindNavListenersOnce() {
+    if (listenersBound) return;
+
+    document.addEventListener("astro:page-load", runEnterAnimations, { once: false });
+    document.addEventListener("astro:after-swap", runEnterAnimations, { once: false });
+
+    listenersBound = true;
+  }
+
+  // Arranque (soporta SSR + Hydration)
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    bindNavListenersOnce();
+    // Dispara la animación inicial de esta carga
+    runEnterAnimations();
+  } else {
+    document.addEventListener("DOMContentLoaded", () => {
+      bindNavListenersOnce();
+      runEnterAnimations();
+    });
+  }
 </script>
+
