@@ -9,10 +9,10 @@ const isActive = (href: string) => href === pathname;
   class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200"
 >
   <div class="container mx-auto px-4">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-20 min-w-0">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href="/" class="flex items-center space-x-3 group">
+        <a href="/" class="flex items-center space-x-3 group min-w-0">
           <img
             src="/CMAP LOGO.svg"
             alt="Logo CMAP"
@@ -20,7 +20,7 @@ const isActive = (href: string) => href === pathname;
           />
 
           <!-- Texto marca: MOBILE -->
-          <div class="md:hidden leading-tight">
+          <div class="md:hidden leading-tight min-w-0 max-w-[60vw] overflow-hidden pointer-events-none">
             <span class="block text-cmap-verde font-bold text-xs">
               CAJA MAGISTERIAL DE AHORROS Y PRÉSTAMOS
             </span>
@@ -131,8 +131,9 @@ const isActive = (href: string) => href === pathname;
 
       <!-- Botón Hamburguesa Mobile -->
       <button
+      style="touch-action: manipulation;"
         id="mobile-menu-btn"
-        class="md:hidden w-10 h-10 flex flex-col items-center justify-center space-y-1.5 rounded-lg hover:bg-gray-100 transition-colors"
+        class="md:hidden w-10 h-10 flex flex-col items-center justify-center space-y-1.5 rounded-lg hover:bg-gray-100 transition-colors relative z-30"
       >
         <span class="bg-cmap-verde w-6 h-0.5 transition-all duration-300"></span>
         <span class="bg-cmap-verde w-6 h-0.5 transition-all duration-300"></span>
