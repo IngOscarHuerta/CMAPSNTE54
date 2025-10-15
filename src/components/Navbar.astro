@@ -10,123 +10,163 @@ const isActive = (href: string) => href === pathname;
 >
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between h-20 min-w-0">
-      <!-- Logo -->
+      <!-- Logo (bloquea clic si ya estás en '/') -->
       <div class="flex-shrink-0">
-        <a href="/" class="flex items-center space-x-3 group min-w-0">
-          <img
-            src="/CMAP LOGO.svg"
-            alt="Logo CMAP"
-            class="w-10 h-10 md:w-15 md:h-15 rounded-xl transform group-hover:shadow-lg transition-transform duration-300 shadow-md"
-          />
+        {
+          isActive('/')
+            ? (
+              <div class="flex items-center space-x-3 group min-w-0 cursor-default">
+                <img
+                  src="/CMAP LOGO.svg"
+                  alt="Logo CMAP"
+                  class="w-10 h-10 md:w-15 md:h-15 rounded-xl transform group-hover:shadow-lg transition-transform duration-300 shadow-md"
+                />
 
-          <!-- Texto marca: MOBILE -->
-          <div
-            class="md:hidden leading-tight min-w-0 max-w-[60vw] overflow-hidden pointer-events-none"
-          >
-            <span class="block text-cmap-verde font-bold text-xs">
-              CAJA MAGISTERIAL DE AHORROS Y PRÉSTAMOS
-            </span>
-            <span class="block text-cmap-naranja-oscuro text-xs">
-              SECCIÓN 54 DEL SNTE
-            </span>
-          </div>
+                <!-- Texto marca: MOBILE -->
+                <div class="md:hidden leading-tight min-w-0 max-w-[60vw] overflow-hidden pointer-events-none">
+                  <span class="block text-cmap-verde font-bold text-xs">
+                    CAJA MAGISTERIAL DE AHORROS Y PRÉSTAMOS
+                  </span>
+                  <span class="block text-cmap-naranja-oscuro text-xs">
+                    SECCIÓN 54 DEL SNTE
+                  </span>
+                </div>
 
-          <!-- Texto marca: DESKTOP -->
-          <div class="hidden md:block">
-            <span class="text-cmap-verde font-bold text-lg">
-              CAJA MAGISTERIAL DE AHORROS Y PRÉSTAMOS
-            </span>
-            <span class="text-cmap-naranja-oscuro text-xs block">
-              SECCIÓN 54 DEL SNTE
-            </span>
-          </div>
-        </a>
+                <!-- Texto marca: DESKTOP -->
+                <div class="hidden md:block">
+                  <span class="text-cmap-verde font-bold text-lg">
+                    CAJA MAGISTERIAL DE AHORROS Y PRÉSTAMOS
+                  </span>
+                  <span class="text-cmap-naranja-oscuro text-xs block">
+                    SECCIÓN 54 DEL SNTE
+                  </span>
+                </div>
+              </div>
+            )
+            : (
+              <a href="/" class="flex items-center space-x-3 group min-w-0">
+                <img
+                  src="/CMAP LOGO.svg"
+                  alt="Logo CMAP"
+                  class="w-10 h-10 md:w-15 md:h-15 rounded-xl transform group-hover:shadow-lg transition-transform duration-300 shadow-md"
+                />
+
+                <!-- Texto marca: MOBILE -->
+                <div class="md:hidden leading-tight min-w-0 max-w-[60vw] overflow-hidden pointer-events-none">
+                  <span class="block text-cmap-verde font-bold text-xs">
+                    CAJA MAGISTERIAL DE AHORROS Y PRÉSTAMOS
+                  </span>
+                  <span class="block text-cmap-naranja-oscuro text-xs">
+                    SECCIÓN 54 DEL SNTE
+                  </span>
+                </div>
+
+                <!-- Texto marca: DESKTOP -->
+                <div class="hidden md:block">
+                  <span class="text-cmap-verde font-bold text-lg">
+                    CAJA MAGISTERIAL DE AHORROS Y PRÉSTAMOS
+                  </span>
+                  <span class="text-cmap-naranja-oscuro text-xs block">
+                    SECCIÓN 54 DEL SNTE
+                  </span>
+                </div>
+              </a>
+            )
+        }
       </div>
 
-      <!-- Menu Desktop - Centro -->
+      <!-- Menu Desktop - Centro (item activo con estilo de hover, y sin clic) -->
       <div class="hidden md:flex items-center space-x-1">
         <!-- Inicio -->
         {
-          isActive("/") ? (
-            <span
-              class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group cursor-default"
-              aria-current="page"
-            >
-              Inicio
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300" />
-            </span>
-          ) : (
-            <a
-              href="/"
-              class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
-            >
-              Inicio
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300" />
-            </a>
-          )
+          isActive('/')
+            ? (
+              <span
+                class="px-6 py-2 text-cmap-naranja-oscuro font-medium rounded-lg bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group cursor-default"
+                aria-current="page"
+              >
+                Inicio
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cmap-naranja-oscuro transition-all duration-300"></span>
+              </span>
+            )
+            : (
+              <a
+                href="/"
+                class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
+              >
+                Inicio
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"></span>
+              </a>
+            )
         }
 
         <!-- Nosotros -->
         {
-          isActive("/acerca") ? (
-            <span
-              class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group cursor-default"
-              aria-current="page"
-            >
-              Nosotros
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300" />
-            </span>
-          ) : (
-            <a
-              href="/acerca"
-              class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
-            >
-              Nosotros
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300" />
-            </a>
-          )
+          isActive('/acerca')
+            ? (
+              <span
+                class="px-6 py-2 text-cmap-naranja-oscuro font-medium rounded-lg bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group cursor-default"
+                aria-current="page"
+              >
+                Nosotros
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cmap-naranja-oscuro transition-all duration-300"></span>
+              </span>
+            )
+            : (
+              <a
+                href="/acerca"
+                class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
+              >
+                Nosotros
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"></span>
+              </a>
+            )
         }
 
         <!-- Contacto -->
         {
-          isActive("/contacto") ? (
-            <span
-              class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group cursor-default"
-              aria-current="page"
-            >
-              Contacto
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300" />
-            </span>
-          ) : (
-            <a
-              href="/contacto"
-              class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
-            >
-              Contacto
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300" />
-            </a>
-          )
+          isActive('/contacto')
+            ? (
+              <span
+                class="px-6 py-2 text-cmap-naranja-oscuro font-medium rounded-lg bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group cursor-default"
+                aria-current="page"
+              >
+                Contacto
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cmap-naranja-oscuro transition-all duration-300"></span>
+              </span>
+            )
+            : (
+              <a
+                href="/contacto"
+                class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
+              >
+                Contacto
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"></span>
+              </a>
+            )
         }
 
         <!-- Documentos -->
         {
-          isActive("/documentos") ? (
-            <span
-              class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group cursor-default"
-              aria-current="page"
-            >
-              Documentos
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300" />
-            </span>
-          ) : (
-            <a
-              href="/documentos"
-              class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
-            >
-              Documentos
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300" />
-            </a>
-          )
+          isActive('/documentos')
+            ? (
+              <span
+                class="px-6 py-2 text-cmap-naranja-oscuro font-medium rounded-lg bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group cursor-default"
+                aria-current="page"
+              >
+                Documentos
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cmap-naranja-oscuro transition-all duration-300"></span>
+              </span>
+            )
+            : (
+              <a
+                href="/documentos"
+                class="px-6 py-2 text-cmap-verde hover:text-cmap-naranja-oscuro font-medium rounded-lg hover:bg-cmap-naranja-oscuro-50 transition-all duration-300 relative group"
+              >
+                Documentos
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cmap-naranja-oscuro group-hover:w-full transition-all duration-300"></span>
+              </a>
+            )
         }
 
         <!-- Externo: siempre clickeable -->
@@ -189,20 +229,14 @@ const isActive = (href: string) => href === pathname;
         aria-controls="mobile-menu"
         aria-label="Abrir menú"
       >
-        <span
-          class="bg-cmap-verde w-6 h-0.5 transition-all duration-300 transform"
-        ></span>
-        <span
-          class="bg-cmap-verde w-6 h-0.5 transition-all duration-300 transform"
-        ></span>
-        <span
-          class="bg-cmap-verde w-6 h-0.5 transition-all duration-300 transform"
-        ></span>
+        <span class="bg-cmap-verde w-6 h-0.5 transition-all duration-300 transform"></span>
+        <span class="bg-cmap-verde w-6 h-0.5 transition-all duration-300 transform"></span>
+        <span class="bg-cmap-verde w-6 h-0.5 transition-all duration-300 transform"></span>
       </label>
     </div>
   </div>
 
-  <!-- Checkbox oculto: hermano del menú -->
+  <!-- Checkbox oculto: hermano del menú (habilita peer-checked en el menú) -->
   <input id="nav-toggle" type="checkbox" class="sr-only peer" />
 
   <!-- Menu Mobile -->
@@ -212,98 +246,106 @@ const isActive = (href: string) => href === pathname;
     style="top: 80px;"
   >
     <div class="flex flex-col h-full">
-      <!-- Links de Navegación -->
+      <!-- Links de Navegación (bloquea clic si es la ruta actual) -->
       <div class="flex-1 px-6 bg-gray-50 py-8 space-y-2">
         <!-- Inicio -->
         {
-          isActive("/") ? (
-            <span
-              class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 cursor-default"
-              aria-current="page"
-            >
-              <div class="flex items-center space-x-3">
-                <span>Inicio</span>
-              </div>
-            </span>
-          ) : (
-            <a
-              href="/"
-              class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600"
-            >
-              <div class="flex items-center space-x-3">
-                <span>Inicio</span>
-              </div>
-            </a>
-          )
+          isActive('/')
+            ? (
+              <span
+                class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 cursor-default"
+                aria-current="page"
+              >
+                <div class="flex items-center space-x-3">
+                  <span>Inicio</span>
+                </div>
+              </span>
+            )
+            : (
+              <a
+                href="/"
+                class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600"
+              >
+                <div class="flex items-center space-x-3">
+                  <span>Inicio</span>
+                </div>
+              </a>
+            )
         }
 
         <!-- Nosotros -->
         {
-          isActive("/acerca") ? (
-            <span
-              class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 cursor-default"
-              aria-current="page"
-            >
-              <div class="flex items-center space-x-3">
-                <span>Nosotros</span>
-              </div>
-            </span>
-          ) : (
-            <a
-              href="/acerca"
-              class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600"
-            >
-              <div class="flex items-center space-x-3">
-                <span>Nosotros</span>
-              </div>
-            </a>
-          )
+          isActive('/acerca')
+            ? (
+              <span
+                class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 cursor-default"
+                aria-current="page"
+              >
+                <div class="flex items-center space-x-3">
+                  <span>Nosotros</span>
+                </div>
+              </span>
+            )
+            : (
+              <a
+                href="/acerca"
+                class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600"
+              >
+                <div class="flex items-center space-x-3">
+                  <span>Nosotros</span>
+                </div>
+              </a>
+            )
         }
 
         <!-- Contacto -->
         {
-          isActive("/contacto") ? (
-            <span
-              class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 cursor-default"
-              aria-current="page"
-            >
-              <div class="flex items-center space-x-3">
-                <span>Contacto</span>
-              </div>
-            </span>
-          ) : (
-            <a
-              href="/contacto"
-              class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600"
-            >
-              <div class="flex items-center space-x-3">
-                <span>Contacto</span>
-              </div>
-            </a>
-          )
+          isActive('/contacto')
+            ? (
+              <span
+                class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 cursor-default"
+                aria-current="page"
+              >
+                <div class="flex items-center space-x-3">
+                  <span>Contacto</span>
+                </div>
+              </span>
+            )
+            : (
+              <a
+                href="/contacto"
+                class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600"
+              >
+                <div class="flex items-center space-x-3">
+                  <span>Contacto</span>
+                </div>
+              </a>
+            )
         }
 
         <!-- Documentos -->
         {
-          isActive("/documentos") ? (
-            <span
-              class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 cursor-default"
-              aria-current="page"
-            >
-              <div class="flex items-center space-x-3">
-                <span>Documentos</span>
-              </div>
-            </span>
-          ) : (
-            <a
-              href="/documentos"
-              class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600"
-            >
-              <div class="flex items-center space-x-3">
-                <span>Documentos</span>
-              </div>
-            </a>
-          )
+          isActive('/documentos')
+            ? (
+              <span
+                class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 cursor-default"
+                aria-current="page"
+              >
+                <div class="flex items-center space-x-3">
+                  <span>Documentos</span>
+                </div>
+              </span>
+            )
+            : (
+              <a
+                href="/documentos"
+                class="block px-6 py-4 text-cmap-verde-700 hover:text-blue-600 font-medium rounded-xl hover:bg-blue-50 transition-all duration-300 border-l-4 border-transparent hover:border-blue-600"
+              >
+                <div class="flex items-center space-x-3">
+                  <span>Documentos</span>
+                </div>
+              </a>
+            )
         }
 
         <!-- Externo: siempre clickeable -->
@@ -372,22 +414,12 @@ const isActive = (href: string) => href === pathname;
 
 <style>
   @media (max-width: 768px) {
-    #mobile-menu {
-      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
-    }
+    #mobile-menu { box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1); }
   }
-  nav[transition\:persist] {
-    view-transition-name: none;
-  }
+  nav[transition\:persist] { view-transition-name: none; }
 
-  /* Animación del botón hamburger a "X" SIN JS (usa :has para leer el estado del checkbox) */
-  nav:has(#nav-toggle:checked) #mobile-menu-btn span:nth-child(1) {
-    transform: translateY(0.375rem) rotate(45deg);
-  }
-  nav:has(#nav-toggle:checked) #mobile-menu-btn span:nth-child(2) {
-    opacity: 0;
-  }
-  nav:has(#nav-toggle:checked) #mobile-menu-btn span:nth-child(3) {
-    transform: translateY(-0.375rem) rotate(-45deg);
-  }
+  /* Animación del botón hamburger a "X" SIN JS (lee el estado del checkbox con :has) */
+  nav:has(#nav-toggle:checked) #mobile-menu-btn span:nth-child(1) { transform: translateY(0.375rem) rotate(45deg); }
+  nav:has(#nav-toggle:checked) #mobile-menu-btn span:nth-child(2) { opacity: 0; }
+  nav:has(#nav-toggle:checked) #mobile-menu-btn span:nth-child(3) { transform: translateY(-0.375rem) rotate(-45deg); }
 </style>
