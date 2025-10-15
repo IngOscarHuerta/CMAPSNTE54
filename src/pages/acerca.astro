@@ -2,7 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Acerca de Nosotros">
+<BaseLayout
+    title="Acerca de Nosotros - CMAP SNTE 54"
+    description="Conoce la historia, misión, visión y el consejo directivo de CMAP SNTE 54."
+>
+    <Fragment slot="seo">
+        <!-- Meta extra si la necesitas -->
+        <meta name="robots" content="index,follow" />
+    </Fragment>
     <div class="container mx-auto px-4 py-12 max-w-6xl">
         <!-- Header -->
         <header class="text-center mb-16">

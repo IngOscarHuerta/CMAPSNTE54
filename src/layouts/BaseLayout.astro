@@ -2,8 +2,18 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-import { ClientRouter } from "astro:transitions"; // 👈 NUEVO
-const { title = "CMAP SNTE 54" } = Astro.props;
+import { ClientRouter } from "astro:transitions";
+
+const {
+  title = "CMAP SNTE 54",
+  description = "Caja Magisterial de Ahorros y Préstamos de la Sección 54 del SNTE. Servicios financieros, préstamos y programas sociales para docentes de Sonora.",
+  ogImage = "/og/cmap-og.jpg", // Recomendado: 1200×630 JPG/PNG
+} = Astro.props;
+
+// Canonical absoluto (requiere `site` en astro.config)
+const canonical = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).toString()
+  : Astro.url.href;
 ---
 
 <html lang="es">
@@ -11,7 +21,30 @@ const { title = "CMAP SNTE 54" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="CMAP SNTE 54" />
+    <meta name="theme-color" content="#01703c" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Iconos -->
     <link rel="icon" type="image/svg+xml" href="/CMAP LOGO.svg" />
+
+    <!-- Open Graph (FB/IG/WA) -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="CMAP SNTE 54" />
+    <meta property="og:locale" content="es_MX" />
+
+    <!-- Slot opcional para meta/LD+JSON por página -->
+    <slot name="seo" />
+
     <ClientRouter />
   </head>
   <body>

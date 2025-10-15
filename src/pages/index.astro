@@ -1,6 +1,5 @@
 ---
 import HeroSection from "../components/HeroSection.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Comunicados (puedes mantenerlos aquí o centralizarlos luego)
 const comunicados = [
@@ -8,10 +7,35 @@ const comunicados = [
   { order: 2, name: "Comunicado Apoyos Vigentes", file: "/comunicados/Comunicado 2.jpg" },
   { order: 3, name: "Aviso Remanente", file: "/comunicados/Aviso 1.jpg" },
 ];
----
 
-<BaseLayout title="Inicio - CMAP">
-  <!-- Fondo general sólido -->
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Inicio - CMAP SNTE 54";
+const pageDesc = "Consulta saldos, préstamos y comunicados oficiales. Caja Magisterial de la Sección 54 del SNTE en Sonora.";
+---
+<BaseLayout title={pageTitle} description={pageDesc} ogImage="/og/home.jpg">
+  <Fragment slot="seo">
+    <!-- Datos estructurados opcionales -->
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify({
+        "@context":"https://schema.org",
+        "@type":"Organization",
+        "name":"Caja Magisterial de Ahorros y Préstamos SNTE 54",
+        "url":"https://www.cmapsnte54.com.mx",
+        "logo":"https://www.cmapsnte54.com.mx/CMAP%20LOGO.svg",
+        "sameAs":[
+          "https://www.facebook.com/CMAP54",
+          "https://www.instagram.com/cmapsnte54/"
+        ],
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"Hermosillo",
+          "addressRegion":"Sonora",
+          "addressCountry":"MX"
+        }
+      })}
+    </script>
+  </Fragment>
+
   <div class="min-h-screen">
     <!-- Hero Section (sólido) -->
     <HeroSection />
@@ -356,9 +380,6 @@ const comunicados = [
       </a>
     </div>
   </div>
-</section>
-
-      </div>
     </section>
 
   </div>
