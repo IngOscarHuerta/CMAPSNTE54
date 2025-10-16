@@ -21,37 +21,21 @@ const canonical = Astro.site
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="author" content="CMAP SNTE 54" />
-    <meta name="theme-color" content="#01703c" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href={canonical} />
-
-    <!-- Iconos -->
-    <link rel="icon" type="image/svg+xml" href="/CMAP LOGO.svg" />
-
-    <!-- Open Graph (FB/IG/WA) -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="CMAP SNTE 54" />
-    <meta property="og:locale" content="es_MX" />
-
-    <!-- Slot opcional para meta/LD+JSON por página -->
-    <slot name="seo" />
-
+    <!-- Habilita SPA View Transitions -->
     <ClientRouter />
+
+    <!-- (Opcional) estilos globales -->
+    <link rel="stylesheet" href="/global.css" />
   </head>
-  <body>
+  <body class="bg-[#f9fafb] text-gray-900">
     <Navbar />
-    <main transition:name="page">
+
+    <!-- En .astro SÍ es válido -->
+    <main transition:name="page" class="min-h-[60vh]">
       <slot />
     </main>
+
     <Footer />
   </body>
 </html>

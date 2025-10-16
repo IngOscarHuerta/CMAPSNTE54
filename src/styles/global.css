@@ -97,18 +97,77 @@
 ::view-transition-old(page) {
   animation: fade-out 180ms ease both;
 }
+
 ::view-transition-new(page) {
   animation: fade-in 240ms 60ms ease both;
 }
-@keyframes fade-out { to { opacity: 0 } }
-@keyframes fade-in  { from { opacity: 0 } to { opacity: 1 } }
+
+@keyframes fade-out {
+  to {
+    opacity: 0
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
 
 /* ====== Animación del título compartido (si la usas) ====== */
 ::view-transition-new(page-title) {
-  animation: title-in 300ms cubic-bezier(.2,.7,.2,1.1) both;
+  animation: title-in 300ms cubic-bezier(.2, .7, .2, 1.1) both;
 }
+
 ::view-transition-old(page-title) {
   animation: title-out 220ms ease both;
 }
-@keyframes title-in  { from { opacity:.6; transform: translateY(6px) scale(.98) } to { opacity:1; transform:none } }
-@keyframes title-out { to   { opacity:0;  transform: translateY(-6px) scale(.98) } }
+
+@keyframes title-in {
+  from {
+    opacity: .6;
+    transform: translateY(6px) scale(.98)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+@keyframes title-out {
+  to {
+    opacity: 0;
+    transform: translateY(-6px) scale(.98)
+  }
+}
+
+/* Activa transiciones entre documentos (Chrome/Edge modernos) */
+@view-transition {
+  navigation: auto;
+}
+
+/* Fondo consistente para evitar flash entre páginas */
+html,
+body {
+  background: #f9fafb;
+  /* tu mismo fondo del <body> */
+}
+
+/* Nombra elementos compartidos para que el navegador “empareje” entre páginas */
+:root {
+  view-transition-name: root;
+}
+
+main {
+  view-transition-name: page;
+}
+
+/* (Opcional) comparte el logo para un efecto más suave */
+img[data-vt="logo"] {
+  view-transition-name: logo;
+}

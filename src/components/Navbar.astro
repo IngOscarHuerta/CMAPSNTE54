@@ -348,3 +348,53 @@ const underlineClass =
   nav:has(#nav-toggle:checked) #mobile-menu-btn span:nth-child(2) { opacity: 0; }
   nav:has(#nav-toggle:checked) #mobile-menu-btn span:nth-child(3) { transform: translateY(-0.375rem) rotate(-45deg); }
 </style>
+
+<script is:inline>
+  (function () {
+    let armHardReload = false;
+
+    // Activa el "primer click duro" cuando la pestaña vuelve a foco/visibilidad
+    const arm = () => { armHardReload = true; setTimeout(() => armHardReload = false, 8000); };
+    window.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') arm();
+    });
+    window.addEventListener('focus', arm);
+
+    // (Cobertura extra) si vienes de historial, también arma
+    window.addEventListener('pageshow', (e) => { if (e.persisted) arm(); });
+    const nav = performance.getEntriesByType?.('navigation')?.[0];
+    if (nav?.type === 'back_forward') arm();
+
+    // Interceptor: primer click en enlaces internos del NAV => navegación dura
+    function isInternalLink(a) {
+      try {
+        const u = new URL(a.href, location.href);
+        return u.origin === location.origin && u.pathname.startsWith('/');
+      } catch { return false; }
+    }
+
+    document.addEventListener('click', (ev) => {
+      if (!armHardReload) return;
+      // Busca <a> en la jerarquía del click
+      const a = ev.target && (ev.target.closest ? ev.target.closest('a') : null);
+      if (!a) return;
+      if (!isInternalLink(a)) return;
+      // Evita que el router intercepte y ve directo
+      ev.preventDefault();
+      armHardReload = false; // consumir una vez
+      // Navegación dura inmediata
+      location.href = a.href;
+    }, true); // capture para ganar a cualquier onClick
+
+    // También marcamos los links del NAV con data-astro-reload mientras está armado (solo cosmético)
+    function markNavLinks(mark) {
+      document.querySelectorAll('nav a[href^="/"]').forEach(a => {
+        if (mark) a.setAttribute('data-astro-reload', '');
+        else a.removeAttribute('data-astro-reload');
+      });
+    }
+    const obs = new MutationObserver(() => markNavLinks(armHardReload));
+    obs.observe(document.documentElement, { childList: true, subtree: true });
+    setInterval(() => markNavLinks(armHardReload), 1500);
+  })();
+</script>
